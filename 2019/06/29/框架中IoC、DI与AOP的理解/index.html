@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="###框架中IoC、DI与AOP的理解框架封装了普通项目中程序员需要重复书写的代码和调用过程，就比如说在传统的jsp项目中，我们的controller接收到前端的请求然后程序员就需要去开发Dao层，里面还涉及数据库的连接和存储过程的代码，大部分都是冗余的代码，而有了SSM框架后极大的简化了程序猿在controller以下层的开发，只需要一个service层和mapper层就行了，mapper层用来">
+<meta name="keywords" content="记录 分享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="框架中IoC、DI与AOP的理解">
+<meta property="og:url" content="http://yoursite.com/2019/06/29/框架中IoC、DI与AOP的理解/index.html">
+<meta property="og:site_name" content="YingHuoooo&#39;s Blog">
+<meta property="og:description" content="###框架中IoC、DI与AOP的理解框架封装了普通项目中程序员需要重复书写的代码和调用过程，就比如说在传统的jsp项目中，我们的controller接收到前端的请求然后程序员就需要去开发Dao层，里面还涉及数据库的连接和存储过程的代码，大部分都是冗余的代码，而有了SSM框架后极大的简化了程序猿在controller以下层的开发，只需要一个service层和mapper层就行了，mapper层用来">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-29T08:57:33.345Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="框架中IoC、DI与AOP的理解">
+<meta name="twitter:description" content="###框架中IoC、DI与AOP的理解框架封装了普通项目中程序员需要重复书写的代码和调用过程，就比如说在传统的jsp项目中，我们的controller接收到前端的请求然后程序员就需要去开发Dao层，里面还涉及数据库的连接和存储过程的代码，大部分都是冗余的代码，而有了SSM框架后极大的简化了程序猿在controller以下层的开发，只需要一个service层和mapper层就行了，mapper层用来">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/06/29/框架中IoC、DI与AOP的理解/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>框架中IoC、DI与AOP的理解 | YingHuoooo's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YingHuoooo's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Stay hungry,stay foolish</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/29/框架中IoC、DI与AOP的理解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YingHuoooo">
+      <meta itemprop="description" content="记录生活 分享知识">
+      <meta itemprop="image" content="/images/YingHuoooo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YingHuoooo's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">框架中IoC、DI与AOP的理解
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-29 16:51:05 / Modified: 16:57:33" itemprop="dateCreated datePublished" datetime="2019-06-29T16:51:05+08:00">2019-06-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>###框架中IoC、DI与AOP的理解<br>框架封装了普通项目中程序员需要重复书写的代码和调用过程，就比如说在传统的jsp项目中，我们的controller接收到前端的请求然后程序员就需要去开发Dao层，里面还涉及数据库的连接和存储过程的代码，大部分都是冗余的代码，而有了SSM框架后极大的简化了程序猿在controller以下层的开发，只需要一个service层和mapper层就行了，mapper层用来连接mapper.xml文件的，而直接用mapper.xml做sql语句的开发就行了，而数据库连接的和存储的过程都直接由Mybatis负责了，你只需要负责传递形参和接收返回数据就行了，这样就完成了一次完整的数据库交互！</p>
+<p>1.1、ioC是什么</p>
+<p>　    ioC—Inversion of Control，即“控制反转”，不是什么技术，而是一种设计思想。在Java开发中，Ioc意味着将你设计好的对象交给容器控制，而不是传统的在你的对象内部直接控制。如何理解好Ioc呢？理解好Ioc的关键是要明确“谁控制谁，控制什么，为何是反转，哪些方面反转了”，那我们来深入分析一下：</p>
+<p>●谁控制谁，控制什么：传统Java SE程序设计，我们直接在对象内部通过new进行创建对象，是程序主动去创建依赖对象；而IoC是有专门一个容器来创建这些对象，即由Ioc容器来控制对象的创建；谁控制谁？当然是IoC 容器控制了对象；控制什么？那就是主要控制了外部资源获取（不只是对象包括比如文件等）。</p>
+<p>●为何是反转，哪些方面反转了：有反转就有正转，传统应用程序是由我们自己在对象中主动控制去直接获取依赖对象，也就是正转；而反转则是由容器来帮忙创建及注入依赖对象；为何是反转？因为由容器帮我们查找及注入依赖对象，对象只是被动的接受依赖对象，所以是反转；哪些方面反转了？依赖对象的获取被反转了。</p>
+<p>　　用图例说明一下，传统程序设计如下图，都是主动去创建相关对象然后再组合起来：</p>
+<p>　　当有了IoC/DI的容器后，在客户端类中不再主动去创建这些对象了，如下图所示:</p>
+<p>1.2  ioC能做什么</p>
+<p>　　ioC不是一种技术，只是一种思想，一个重要的面向对象编程的法则，它能指导我们如何设计出松耦合、更优良的程序。传统应用程序都是由我们在类内部主动创建依赖对象，从而导致类与类之间高耦合，难于测试；有了ioC容器后，把创建和查找依赖对象的控制权交给了容器，由容器进行注入组合对象，所以对象与对象之间是松散耦合，这样也方便测试，利于功能复用，更重要的是使得程序的整个体系结构变得非常灵活。</p>
+<p>　　其实IoC对编程带来的最大改变不是从代码上，而是从思想上，发生了“主从换位”的变化。应用程序原本是老大，要获取什么资源都是主动出击，但是在IoC/DI思想中，应用程序就变成被动的了，被动的等待IoC容器来创建并注入它所需要的资源了。</p>
+<p>　　IoC的原理是基于好莱坞法则：“别找我们，我们找你(don‘t call us, we‘ll call you)”，即由IoC容器帮对象找相应的依赖对象并注入，而不是由对象主动去找。所有的组件都是被动的（Passive），所有的组件初始化和调用都由容器负责。</p>
+<p>1.3  IoC和DI</p>
+<p>　　DI—Dependency Injection，即“依赖注入”：是组件之间依赖关系由容器在运行期决定，形象的说，即由容器动态地将某个依赖关系注入到组件之中。依赖注入的目的并非为软件系统带来更多功能，而是为了提升组件重用的频率，并为系统搭建一个灵活、可扩展的平台。通过依赖注入机制，我们只需要通过简单的配置，而无需任何代码就可指定目标需要的资源，完成自身的业务逻辑，而不需要关心具体的资源来自何处，由谁实现。</p>
+<p>Spring IoC容器的依赖有两层含义：Bean依赖容器和容器注入Bean 的依赖资源：</p>
+<p>　　Bean依赖容器：也就是说Bean要依赖于容器，这里的依赖是指容器负责创建Bean并管理Bean的生命周期，正是由于由容器来控制创建Bean并注入依赖，也就是控制权被反转了，这也正是IoC名字的由来，此处的有依赖是指Bean和容器之间的依赖关系。</p>
+<p>　　容器注入Bean的依赖资源：容器负责注入Bean的依赖资源，依赖资源可以是Bean、外部文件、常量数据等，在Java中都反映为对象，并且由容器负责组装Bean之间的依赖关系，此处的依赖是指Bean之间的依赖关系，可以认为是传统类与类之间的“关联”、“聚合”、“组合”关系。</p>
+<p>理解DI的关键是：“谁依赖谁，为什么需要依赖，谁注入谁，注入了什么”，那我们来深入分析一下：</p>
+<p>　　谁依赖于谁：当然是应用程序依赖于IoC容器；</p>
+<p>　　为什么需要依赖：应用程序需要IoC容器来提供对象需要的外部资源；</p>
+<p>　　谁注入谁：很明显是IoC容器注入应用程序某个对象，应用程序依赖的对象；</p>
+<p>　　注入了什么：就是注入某个对象所需要的外部资源（包括对象、资源、常量数据）。</p>
+<p>为什么要应用依赖注入，应用依赖注入能给我们带来哪些好处呢？</p>
+<p>　　动态替换Bean依赖对象，程序更灵活：替换Bean依赖对象，无需修改源文件：应用依赖注入后，由于可以采用配置文件方式实现，从而能随时动态的替换Bean的依赖对象，无需修改java源文件；</p>
+<p>　　更好实践面向接口编程，代码更清晰：在Bean中只需指定依赖对象的接口，接口定义依赖对象完成的功能，通过容器注入依赖实现；</p>
+<p>　　更好实践优先使用对象组合，而不是类继承：因为IoC容器采用注入依赖，也就是组合对象，从而更好的实践对象组合。</p>
+<p>　　　　采用对象组合，Bean的功能可能由几个依赖Bean的功能组合而成，其Bean本身可能只提供少许功能或根本无任何功能，全部委托给依赖Bean，对象组合具有动态性，能更方便的替换掉依赖Bean，从而改变Bean功能；</p>
+<p>　　　　而如果采用类继承，Bean没有依赖Bean，而是采用继承方式添加新功能，，而且功能是在编译时就确定了，不具有动态性，而且采用类继承导致Bean与子Bean之间高度耦合，难以复用。</p>
+<p>　　增加Bean可复用性：依赖于对象组合，Bean更可复用且复用更简单；</p>
+<p>　　降低Bean之间耦合：由于我们完全采用面向接口编程，在代码中没有直接引用Bean依赖实现，全部引用接口，而且不会出现显示的创建依赖对象代码，而且这些依赖是由容器来注入，很容易替换依赖实现类，从而降低Bean与依赖之间耦合；</p>
+<p>　　代码结构更清晰：要应用依赖注入，代码结构要按照规约方式进行书写，从而更好的应用一些最佳实践，因此代码结构更清晰。</p>
+<p>　　从以上我们可以看出，其实依赖注入只是一种装配对象的手段，设计的类结构才是基础，如果设计的类结构不支持依赖注入，Spring IoC容器也注入不了任何东西，从而从根本上说“如何设计好类结构才是关键，依赖注入只是一种装配对象手段”。</p>
+<p>　　IoC 和 DI 有什么关系呢？其实它们是同一个概念的不同角度描述，由于控制反转概念比较含糊（可能只是理解为容器控制对象这一个层面，很难让人想到谁来维护对象关系），所以2004年大师级人物Martin Fowler又给出了一个新的名字：“依赖注入”。相对IoC 而言，“依赖注入”明确描述了“被注入对象依赖IOC容器配置依赖对象”。</p>
+<p>注：如果想要更加深入的了解IoC和DI，请参考大师级人物Martin Fowler的一篇经典文章《Inversion of Control Containers and the Dependency Injection pattern》，原文地址：<a href="http://www.martinfowler.com/articles/injection.html。" target="_blank" rel="noopener">http://www.martinfowler.com/articles/injection.html。</a></p>
+<p>1.4  IoC容器的概念</p>
+<p>　　IoC容器就是具有依赖注入功能的容器，IoC容器负责实例化、定位、配置应用程序中的对象及建立这些对象间的依赖。应用程序无需直接在代码中new相关的对象，应用程序由IoC容器进行组装。在Spring中BeanFactory是IoC容器的实际代表者。</p>
+<p>　　Spring IoC容器如何知道哪些是它管理的对象呢？这就需要配置文件，Spring IoC容器通过读取配置文件中的配置元数据，通过元数据对应用中的各个对象进行实例化及装配。一般使用基于xml配置文件进行配置元数据，而且Spring与配置文件完全解耦的，可以使用其他任何可能的方式进行配置元数据，比如注解、基于java文件的、基于属性文件的配置都可以。</p>
+<p>2.1  Bean的概念</p>
+<p>　　由IoC容器管理的那些组成你应用程序的对象我们就叫它Bean， Bean就是由Spring容器初始化、装配及管理的对象，除此之外，bean就与应用程序中的其他对象没有什么区别了。那IoC怎样确定如何实例化Bean、管理Bean之间的依赖关系以及管理Bean呢？这就需要配置元数据，在Spring中由BeanDefinition代表，配置元数据指定如何实例化Bean、如何组装Bean等。</p>
+<p>　　让我们来看下IoC容器到底是如何工作。在此我们以xml配置方式来分析一下：</p>
+<p>　　① 准备配置文件：就像前边Hello World配置文件一样，在配置文件中声明Bean定义也就是为Bean配置元数据。</p>
+<p>　　② 由 IoC容器进行解析元数据： IoC容器的Bean Reader读取并解析配置文件，根据定义生成BeanDefinition配置元数据对象，IoC容器根据BeanDefinition进行实例化、配置及组装Bean。</p>
+<p>　　③ 实例化 IoC容器：由客户端实例化容器，获取需要的Bean。</p>
+<p>　　执行过程如下图：</p>
+<p>2.2  实例化Bean</p>
+<p>　　Spring IoC容器如何实例化Bean呢？传统应用程序可以通过new和反射方式进行实例化Bean。而Spring IoC容器则需要根据Bean定义里的配置元数据使用反射机制来创建Bean。在Spring IoC容器中根据Bean定义创建Bean主要有以下几种方式：</p>
+<p>　　1、使用构造器实例化Bean：这是最简单的方式，Spring IoC容器既能使用默认空构造器也能使用有参数构造器两种方式创建Bean，如以下方式指定要创建的Bean类型：</p>
+<p>　　　　① 使用空构造器进行定义，使用此种方式，class属性指定的类必须有空构造器</p>
+<pre><code>1 &lt;bean name=&quot;bean1&quot; class=&quot;cn.javass.spring.chapter2.HelloImpl2&quot;/&gt;
+</code></pre><p>　　　　② 使用有参数构造器进行定义，使用此种方式，可以使用&lt; constructor-arg &gt;标签指定构造器参数值，其中index表示位置，value表示常量值，也可以指定引用，指定引用使用ref来引用另一个Bean定义：</p>
+<pre><code>1 &lt;bean name=&quot;bean2&quot; class=&quot;cn.javass.spring.chapter2.HelloImpl2&quot;&gt;  
+2 &lt;!-- 指定构造器参数 --&gt;  
+3      &lt;constructor-arg index=&quot;0&quot; value=&quot;Hello Spring!&quot;/&gt;  
+4 &lt;/bean&gt;
+</code></pre><p>　　2、使用静态工厂方式实例化Bean，使用这种方式除了指定必须的class属性，还要指定factory-method属性来指定实例化Bean的方法，而且使用静态工厂方法也允许指定方法参数，spring IoC容器将调用此属性指定的方法来获取Bean，配置如下所示：</p>
+<p>　　　　① 先来看看静态工厂类代码吧HelloApiStaticFactory：</p>
+<pre><code>1 public class HelloApiStaticFactory {  
+2     //工厂方法  
+3     public static HelloApi newInstance(String message) {  
+4         //返回需要的Bean实例  
+5         return new HelloImpl2(message);  
+6     }  
+7 }  
+</code></pre><p>　　　　② 静态工厂写完了，让我们在配置文件(resources/chapter2/instantiatingBean.xml)配置Bean定义：</p>
+<pre><code>1 &lt;!-- 使用静态工厂方法 --&gt;  
+2 &lt;bean id=&quot;bean3&quot; class=&quot;cn.javass.spring.chapter2.HelloApiStaticFactory&quot; factory-method=&quot;newInstance&quot;&gt;  
+3      &lt;constructor-arg index=&quot;0&quot; value=&quot;Hello Spring!&quot;/&gt;  
+4 &lt;/bean&gt; 
+</code></pre><p>　　3、使用实例工厂方法实例化Bean，使用这种方式不能指定class属性，此时必须使用factory-bean属性来指定工厂Bean，factory-method属性指定实例化Bean的方法，而且使用实例工厂方法允许指定方法参数，方式和使用构造器方式一样，配置如下：</p>
+<p>　　　　① 实例工厂类代码（HelloApiInstanceFactory.java）如下：</p>
+<pre><code>1 public class HelloApiInstanceFactory {  
+2     public HelloApi newInstance(String message) {  
+3         return new HelloImpl2(message);  
+4     }  
+5 }
+</code></pre><p>　　　　② 在配置文件(resources/chapter2/instantiatingBean.xml)配置Bean定义：</p>
+<pre><code>1 &lt;!—1、定义实例工厂Bean --&gt;  
+2 &lt;bean id=&quot;beanInstanceFactory&quot; class=&quot;cn.javass.spring.chapter2.HelloApiInstanceFactory&quot;/&gt;
+3 &lt;!—2、使用实例工厂Bean创建Bean --&gt;
+4 &lt;bean id=&quot;bean4&quot; factory-bean=&quot;beanInstanceFactory&quot;factory-method=&quot;newInstance&quot;&gt;  
+5     &lt;constructor-arg index=&quot;0&quot; value=&quot;Hello Spring!&quot;&gt;&lt;/constructor-arg&gt;  
+6 &lt;/bean&gt; 
+</code></pre><p>　　这三种方式只是配置不一样，从获取方式看完全一样，没有任何不同。这也是Spring IoC的魅力，Spring IoC帮我们创建Bean，我们只管使用就可以了。</p>
+<p>3  AOP</p>
+<p>　　面向切面编程（AOP）提供另外一种角度来思考程序结构，通过这种方式弥补了面向对象编程（OOP）的不足。</p>
+<p>　　除了类（classes）以外，AOP提供了切面。切面对关注点进行模块化，例如横切多个类型和对象的事务管理。Spring的一个关键的组件就是AOP框架，可以自由选择是否使用AOP。</p>
+<p>　　提供声明式企业服务，特别是为了替代EJB声明式服务。最重要的服务是声明性事务管理，这个服务建立在Spring的抽象事物管理之上。</p>
+<p>　　允许用户实现自定义切面，用AOP来完善OOP的使用可以把Spring AOP看作是对Spring的一种增强。</p>
+<p>4  总结</p>
+<p>　　1. Ioc和DI其实是一种思想，并不是具体的技术，当我们在搭建SSM项目的时候就是用到了这种思想。</p>
+<p>　　2. 首先Spring是个大容器，可以把整个项目都包含进去，而Ioc和DI就是运转整个项目的核心思想。</p>
+<p>　　3. 项目的运行和周期由Ioc控制，事件的请求和反应由DI控制</p>
+<p>　　4. 就比如：org.springframework.web.servlet.DispatcherServlet前端配置类，当前端发出请求后，Ioc会控制这个请求的接收，通过spring中的类来找到controller，而不是用户自己去接收前端请求，这就是Ioc的一个应用 </p>
+<p>　　5. DI(依赖注入)的思想可以在创建数据库连接上体现，整个项目穿件连接时并不是当需要连接时new一个连接，而是项目在配置的时候创建好连接，当要用的时候，DI会给程序去用，而程序在什么时候用和怎么用时开发者不知道的，但最后还是实现了功能。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/14/Topology/" rel="next" title="Kakutani fixed point theorem">
+                <i class="fa fa-chevron-left"></i> Kakutani fixed point theorem
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/YingHuoooo.jpg" alt="YingHuoooo">
+            
+              <p class="site-author-name" itemprop="name">YingHuoooo</p>
+              <div class="site-description motion-element" itemprop="description">记录生活 分享知识</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YingHuoooo</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
