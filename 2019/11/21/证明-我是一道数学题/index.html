@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="title: ‘证明:我是一道数学题’date: 2019-11-21 15:28:18 tags: “求真”包袱（Baggage） 泰格马克教授提出过一个关键的名词概念，叫“包袱（baggage）”。所谓包袱，就是人类强加在某个系统上的概念。 比如一个篮球，明明是一堆原子，人们为了方便起见，把这堆原子当成同一个东西，叫“篮球” —— 篮球就是一个包袱。生物体的底层逻辑就是化学。所以，化学就是更">
+<meta name="keywords" content="记录 分享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="YingHuoooo&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2019/11/21/证明-我是一道数学题/index.html">
+<meta property="og:site_name" content="YingHuoooo&#39;s Blog">
+<meta property="og:description" content="title: ‘证明:我是一道数学题’date: 2019-11-21 15:28:18 tags: “求真”包袱（Baggage） 泰格马克教授提出过一个关键的名词概念，叫“包袱（baggage）”。所谓包袱，就是人类强加在某个系统上的概念。 比如一个篮球，明明是一堆原子，人们为了方便起见，把这堆原子当成同一个东西，叫“篮球” —— 篮球就是一个包袱。生物体的底层逻辑就是化学。所以，化学就是更">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpc9qjXNeA2UQCbfCR5KegNsMvn5uXRKImRbgWb3h591390SbFUIGMUjOr1McwsBv9Bpy4EibvMCNMQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpc9qjXNeA2UQCbfCR5KegNsu8nicWmpkLHDM0U9QQxxO6S6iaTcjhGbSgY3vFXmcvzfGUhwWZ9JnyIQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpc9qjXNeA2UQCbfCR5KegNsFkOCT65TwGU4RekNt1aRfXNvfY5UfnIMJLaEnAicWZUHYibHVLsHgtvQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpc9qjXNeA2UQCbfCR5KegNsnnichXHW3R7mWj64zsEU8Nq6DHxiboBib5cickbBRx1lDvRicLrCU9ZIN6g/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_gif/3lFjlY4eZpc9qjXNeA2UQCbfCR5KegNs0Fdn68Eza7Kt2PIXWzlNIUibTMNWeFzhDibXR8dricuwQqlRcFhpytMWw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:updated_time" content="2019-11-21T07:29:50.633Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="YingHuoooo&#39;s Blog">
+<meta name="twitter:description" content="title: ‘证明:我是一道数学题’date: 2019-11-21 15:28:18 tags: “求真”包袱（Baggage） 泰格马克教授提出过一个关键的名词概念，叫“包袱（baggage）”。所谓包袱，就是人类强加在某个系统上的概念。 比如一个篮球，明明是一堆原子，人们为了方便起见，把这堆原子当成同一个东西，叫“篮球” —— 篮球就是一个包袱。生物体的底层逻辑就是化学。所以，化学就是更">
+<meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpc9qjXNeA2UQCbfCR5KegNsMvn5uXRKImRbgWb3h591390SbFUIGMUjOr1McwsBv9Bpy4EibvMCNMQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/11/21/证明-我是一道数学题/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title> | YingHuoooo's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YingHuoooo's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Stay hungry,stay foolish</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/证明-我是一道数学题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YingHuoooo">
+      <meta itemprop="description" content="记录生活 分享知识">
+      <meta itemprop="image" content="/images/YingHuoooo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YingHuoooo's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-11-21 15:29:50" itemprop="dateCreated datePublished" datetime="2019-11-21T15:29:50+08:00">2019-11-21</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>title: ‘证明:我是一道数学题’<br>date: 2019-11-21 15:28:18</p>
+<h2 id="tags-“求真”"><a href="#tags-“求真”" class="headerlink" title="tags: “求真”"></a>tags: “求真”</h2><p><strong>包袱（Baggage）</strong></p>
+<p>泰格马克教授提出过一个关键的名词概念，叫“包袱（baggage）”。所谓包袱，就是人类强加在某个系统上的概念。</p>
+<p>比如一个篮球，明明是一堆原子，人们为了方便起见，把这堆原子当成同一个东西，叫“篮球” —— 篮球就是一个包袱。生物体的底层逻辑就是化学。所以，化学就是<strong>更基本</strong>的结构，而生物体各个器官的名称，就是包袱。同样道理，化学的底层是物理，所以化学概念也是“<strong>包袱</strong>”。就像一个洋葱，每层洋葱皮对于下面的那层而言，都是<strong>“包袱</strong>”。</p>
+<p><strong>那如果把所谓的包袱都剥离掉，剩下来的是什么？</strong></p>
+<p>再换个角度。生活中，我们经常会有类似的对话“你大学是学什么专业的？”“哦，计算机。”。在科学家眼中，对于“学科”的概念会有另一番解读。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpc9qjXNeA2UQCbfCR5KegNsMvn5uXRKImRbgWb3h591390SbFUIGMUjOr1McwsBv9Bpy4EibvMCNMQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
+<p>（科学家眼中各个学科的推导关系）</p>
+<p>从物理学出发，可以推导出化学、机械工程和电子工程。从物理学和化学出发，可以推导出地球科学和生物学。从生物学出发可以推导出心理学和医学，然后你又可以推导出社会学……这一切的一切，都源自一个“终极理论”。</p>
+<p>但，这个终极理论又是什么？</p>
+<p>也许，压根不存在什么终极理论。著名的物理学家弗里曼·戴森(Freeman Dyson)（曾经和爱因斯坦做过同事），他就对追求终极理论这件事很不屑。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpc9qjXNeA2UQCbfCR5KegNsu8nicWmpkLHDM0U9QQxxO6S6iaTcjhGbSgY3vFXmcvzfGUhwWZ9JnyIQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
+<p>著名物理学家，弗里曼·戴森（Freeman Dyson)</p>
+<p>弗里曼·戴森教授认为，人类不要整天妄想要统治科学，我们能从宇宙万物当中发现一点新思想，让人类的各种知识彼此交织在一起，产生新的洞见，这就已经是很大的成就了。</p>
+<p>而泰格马克教授的“数学宇宙”假说，无疑给到了我们一个全新的世界观。虽然我们现在还远不能参透“终极理论”的奥妙，但至少我们找到了一个很好且自洽的突破口——<strong>数学</strong>。 </p>
+<p>我们来做个小实验。现在，你站起来一下，摸摸身后又冷又硬的墙壁，你会不会感受到一种很实在的“质感”？没错，我们会觉得这堵墙是一个实实在在的东西。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpc9qjXNeA2UQCbfCR5KegNsFkOCT65TwGU4RekNt1aRfXNvfY5UfnIMJLaEnAicWZUHYibHVLsHgtvQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
+<p>可在物理层面，你的所有感觉都只不过是电磁相互作用而已：电磁力在宏观体现为一种分子间的斥力，让你的手不能穿墙而过；组成墙壁的物质分子热运动决定了墙壁的温度。</p>
+<p>所有的一切机制，都只不过是数学关系。 </p>
+<p>你以为你感受到了“墙壁”，其实是数学关系决定了物理行为，物理行为决定了化学信号，化学信号传递到你的大脑而已。<strong>这一切，都是数学</strong>。</p>
+<p><strong>你是一道数学题</strong></p>
+<p>“人”又是什么？用 “包袱”的观点来看，“人”就是一堆原子的一个“包袱”。一个人喝点水，这堆原子就多了一些；出点汗，这堆原子就少了一些 ；如果一个人死了，这些原子会分散开来。一个人的一生，其实就是一堆原子在一起相处了一段时间之后又分开了。</p>
+<p>如果，把时间当成一个维度，每个原子的运动就不是一个点，而是一条线。那一个人的一生，在时空之中看来，就好像是一团有点杂乱的辫子一样 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpc9qjXNeA2UQCbfCR5KegNsnnichXHW3R7mWj64zsEU8Nq6DHxiboBib5cickbBRx1lDvRicLrCU9ZIN6g/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
+<p>左边是由原子组成的一个简单物体；中间是人生的一段，原子组成的结构有点复杂；右边是人死亡之后，原子分散开来。</p>
+<p>盯着这张图，会感觉有点震撼心灵。人的一生就好像是一张路线图，我们的某一时刻就是这张图上的一个截面 。 那你也许会问，过去和未来有什么区别吗？没有本质区别，时间只是一个位置而已。</p>
+<p>所有数学方程都是“静态”的，永远都在那里，没有时效。方程一旦选定，这个宇宙的历史就已经选定了，你这堆原子的轨迹就已经呈现了，你这辈子其实就已经注定了。</p>
+<p>所谓时间的流逝，其实是我们的叙事自我，对自己这堆原子的路径的一个“主观体验”。听到坏消息震惊，听到好消息惊喜，这都只不过是你对某个路径的主观评价 —— 那条路径其实早已存在，另一种可能性的路径也都存在，只不过这个平行宇宙里的你没有感知到而已。此时此刻的你，只是一个用数学描绘的时空方程中的一个“坐标”罢了。</p>
+<p><strong>因果关系只是一种幻觉</strong></p>
+<p>苏格兰哲学家大卫·休谟的观点，他对于世人眼中的“因果律”表示了怀疑。<strong>他认为，我们总结的这些“因果律”，不过是凭主观印象把两个事物强行建立联系而已。我们在日常生活中经常看到两个现象前后脚出现，脑中就形成了习惯性的联想。但这种联系，并非真的是自然的本质。</strong></p>
+<p>如果在网上，此时估计会有一大票人喷休谟是杠精，但他的质疑确实是合理的。比如“鸡叫”和“天亮”每天都会一前一后准时出现，但如果就此以为鸡叫是因，天亮是果，我们现代人一想也知道这是很荒谬的。</p>
+<p>后来，越来越多的学者有了同感，他们发现“时间连续性”或“相关性”的规律，并不一定代表真正的因果关系。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/3lFjlY4eZpc9qjXNeA2UQCbfCR5KegNs0Fdn68Eza7Kt2PIXWzlNIUibTMNWeFzhDibXR8dricuwQqlRcFhpytMWw/640?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="img"></p>
+<p>桌子上有个花瓶，你养的猫碰了一下，花瓶掉下来摔碎了——整个这个过程中，谁是因，谁是果呢？我们可以说花瓶碎了是结果，“猫推”是原因。但猫或许不答应——谁叫你今天没有为我开启猫罐头！你可能会想说“哦，原来问题出在我身上”。但你也有理由啊——公司突然通知周末加班，哪有时间去买……</p>
+<p>如此一环又一环地向上追溯，到底谁应该为花瓶负责，谁才是根本的原因呢？根本就不存在根本原因。宇宙一旦诞生，万事万物只是依照物理定律运行而已。单独截取一个 A 点，说 A 点是后来的 B 点的“原因”，毫无意义。</p>
+<p>牛顿那个时代的物理学家就已经意识到了这一点，只不过那时候的人相信，如果整个宇宙有一个“最初的开始”，那么那个“最初的开始”，就是一切事物的原因。不过现在物理学家已经摒弃了这个想法。只要<strong>数学方程在</strong>，宇宙的暴胀就可以随时开始，根本不需要“第一个原因”。</p>
+<p><strong>从宇宙创生到现在，万事万物的一切演化，包括你此时此刻的所作所为、所思所想，都是数学注定的。</strong> <strong>我们的生活只不过是从已有的数学中获得体验而已。</strong> </p>
+<p> ………………………</p>
+<p><strong>最后用万维钢老师的话，作为结尾：</strong></p>
+<p><em>“在感情上我强烈希望意识和世界都是真的；但是在理智上，我越了解物理学，就越觉得世界是个幻觉。</em></p>
+<p><em>如果你经常思考这种问题，恐怕就无法享受岁月静好的生活了，对此我表示抱歉 —— 但是在我看来，‘岁月静好’=‘浑浑噩噩’。不管真实世界是不是幻觉，岁月静好绝对是幻觉。”</em></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/24/杂谈/" rel="next" title="杂谈">
+                <i class="fa fa-chevron-left"></i> 杂谈
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/YingHuoooo.jpg" alt="YingHuoooo">
+            
+              <p class="site-author-name" itemprop="name">YingHuoooo</p>
+              <div class="site-description motion-element" itemprop="description">记录生活 分享知识</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-“求真”"><span class="nav-number">1.</span> <span class="nav-text">tags: “求真”</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YingHuoooo</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
