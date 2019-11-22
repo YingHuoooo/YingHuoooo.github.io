@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="弹珠玩具启示录小时候在庙会玩过一个游戏，一个木板上均匀地钉s着一些钉子，我们把弹珠从顶部放进去，弹珠在钉子之间随机地穿梭，最后可能落到下面的任何一个凹槽里。 不同的凹槽代表着不同的奖项，比如毛绒玩具、肥皂盒等等。  后来才知道这个玩具不是庙会原创，它的雏形是“高尔顿板”，设计者高尔顿（Francis Galton）是我们熟知的那位生物学家达尔文的表弟。和庙会那个玩具略有不同，高尔顿板上方的正中间有">
+<meta name="keywords" content="弹珠">
+<meta property="og:type" content="article">
+<meta property="og:title" content="弹珠玩具启示录">
+<meta property="og:url" content="http://yoursite.com/2019/11/22/弹珠玩具启示录/index.html">
+<meta property="og:site_name" content="YingHuoooo&#39;s Blog">
+<meta property="og:description" content="弹珠玩具启示录小时候在庙会玩过一个游戏，一个木板上均匀地钉s着一些钉子，我们把弹珠从顶部放进去，弹珠在钉子之间随机地穿梭，最后可能落到下面的任何一个凹槽里。 不同的凹槽代表着不同的奖项，比如毛绒玩具、肥皂盒等等。  后来才知道这个玩具不是庙会原创，它的雏形是“高尔顿板”，设计者高尔顿（Francis Galton）是我们熟知的那位生物学家达尔文的表弟。和庙会那个玩具略有不同，高尔顿板上方的正中间有">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5C3v42rO8v93Yf38kxMMickmQEzGUSic4Z3D0K6QF8jbYK5ybun81OB6w/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5HweYyiagENib9xibhqRGfaJLVajiadDib3BOozg02UnBgEuUiaAxsVE6UYqw/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5TsCnqqbTXuDybOqEEnRydd5TY1V0q5ictzZ9xibNCR5GpJtOacpDkYhg/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5Nia30VTGQC1QwLv6ndiajAJFTzSAQQzm6RJZHt6PRVYGsoawADOyADyA/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5nxFHfadMyNcD3WrL55wSyyVFP3IqPq6eCOWUS3JSIxgiaxzZAmlY2kg/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5aNVjTnVHlyGzBW9wJxwnCnN2skwPgtbAckZAJFMdAOW8NfpbzEyiaicg/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5aReHygFwP0ic3VW7O5Kic6VrylAp3ahr29vY2SydxiaALCZI2Muic6PuzQ/640">
+<meta property="og:updated_time" content="2019-11-22T04:35:45.531Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="弹珠玩具启示录">
+<meta name="twitter:description" content="弹珠玩具启示录小时候在庙会玩过一个游戏，一个木板上均匀地钉s着一些钉子，我们把弹珠从顶部放进去，弹珠在钉子之间随机地穿梭，最后可能落到下面的任何一个凹槽里。 不同的凹槽代表着不同的奖项，比如毛绒玩具、肥皂盒等等。  后来才知道这个玩具不是庙会原创，它的雏形是“高尔顿板”，设计者高尔顿（Francis Galton）是我们熟知的那位生物学家达尔文的表弟。和庙会那个玩具略有不同，高尔顿板上方的正中间有">
+<meta name="twitter:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5C3v42rO8v93Yf38kxMMickmQEzGUSic4Z3D0K6QF8jbYK5ybun81OB6w/640">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/11/22/弹珠玩具启示录/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>弹珠玩具启示录 | YingHuoooo's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YingHuoooo's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Stay hungry,stay foolish</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/22/弹珠玩具启示录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YingHuoooo">
+      <meta itemprop="description" content="记录生活 分享知识">
+      <meta itemprop="image" content="/images/YingHuoooo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YingHuoooo's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">弹珠玩具启示录
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-11-22 12:32:42 / Modified: 12:35:45" itemprop="dateCreated datePublished" datetime="2019-11-22T12:32:42+08:00">2019-11-22</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="弹珠玩具启示录"><a href="#弹珠玩具启示录" class="headerlink" title="弹珠玩具启示录"></a><strong>弹珠玩具启示录</strong></h2><p>小时候在庙会玩过一个游戏，一个木板上均匀地钉s着一些钉子，我们把弹珠从顶部放进去，弹珠在钉子之间随机地穿梭，最后可能落到下面的任何一个凹槽里。 不同的凹槽代表着不同的奖项，比如毛绒玩具、肥皂盒等等。</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5C3v42rO8v93Yf38kxMMickmQEzGUSic4Z3D0K6QF8jbYK5ybun81OB6w/640" alt="img"></p>
+<p>后来才知道这个玩具不是庙会原创，它的雏形是“高尔顿板”，设计者高尔顿（Francis Galton）是我们熟知的那位生物学家达尔文的表弟。和庙会那个玩具略有不同，高尔顿板上方的正中间有一个开口，将小球放入其中，小球会以一个随机的路线向下运动，下落的过程中每碰到一个钉子有50%的概率往左、50%的概率往右，最后落入底部的某一个凹槽内。</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5HweYyiagENib9xibhqRGfaJLVajiadDib3BOozg02UnBgEuUiaAxsVE6UYqw/640" alt="img"></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5TsCnqqbTXuDybOqEEnRydd5TY1V0q5ictzZ9xibNCR5GpJtOacpDkYhg/640" alt="img"></p>
+<p>当你放了<strong>很多很多很多</strong>的小球之后，它们就会在凹槽上呈现一个明显有规律的分布：<strong>一条钟形曲线。这就是正态分布。</strong></p>
+<p>高尔顿用这个板向当时的人们演示了正态分布的产生过程，并打算用它来解释世人的身高、智商等特征为什么会遵循这样一个分布规律：</p>
+<p>你可以把这个板的平面图想象成一个坐标系，横坐标代表身高，纵坐标代表每个身高值上的人数。<strong>正态分布就是说，身高特别高和特别矮的人就像处在板子左右边缘的小球一样，是少数派，大多数人都是中间派的小球，处在一个不高不矮的身高范围内。</strong></p>
+<p>高尔顿不满足于这个单一的玩法，他将这个装置升级成一个“高尔顿板2.0”——在凹槽下面再放上一些钉子作隔挡，然后在第二排钉子隔挡区域下面再放上第二排凹槽。</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5Nia30VTGQC1QwLv6ndiajAJFTzSAQQzm6RJZHt6PRVYGsoawADOyADyA/640" alt="img"></p>
+<p>他想用这个高尔顿板2.0，模拟身高的遗传。那些掉落到中间凹槽并呈正态分布的小球代表父辈，掉落到底层凹槽的结果代表后代。</p>
+<p>那么在最底层的凹槽，小球会呈现怎样的分布呢？</p>
+<p>这个结果是不难想象的。我们从理论上分析一下，<strong>小球们会基于新的起点，在下面形成一个个小的正态分布，然后这些小正态分布的结果，叠加成一个大的正态分布，并且区域会更加广阔，形状会更加扁平。</strong></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5nxFHfadMyNcD3WrL55wSyyVFP3IqPq6eCOWUS3JSIxgiaxzZAmlY2kg/640" alt="img"></p>
+<p>我们的想象是没错的，小球们的确在底部的凹槽形成了更广阔更扁平的正态分布形态。</p>
+<p>那么身高的遗传是不是能遵循高尔顿板2.0的演示结果呢？</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5aNVjTnVHlyGzBW9wJxwnCnN2skwPgtbAckZAJFMdAOW8NfpbzEyiaicg/640" alt="img"></p>
+<p>我们对着这个板儿想象一下：假设现在有一批身高特别高的人，他们处在第一代正态分布曲线的右侧边缘地带。身高特别矮的人，处在第一代正态分布曲线的左侧边缘地带。这些身高特殊人群就像中间凹槽处那些处于边缘位置的小球，<strong>因为球下落后的落脚点遵循正态分布，落下之后应该有一半左右处在更边缘的位置。</strong></p>
+<p>如此说来，第二代身高的边界，应该比第一代更宽才对。世界上的人群的身高应该会变得越来越悬殊。</p>
+<p>事实却并非如此！人类身高的遗传并不遵循高尔顿板2.0体现出的规律！</p>
+<p>高尔顿费尽苦心地搜集了一千多对父子的身高数据，他发现，虽然总的趋势是父亲长得高，儿子也相对高，但还有一个很奇怪的现象：当父亲高于平均身高时，儿子身高比他更高的概率要小于比他更矮的概率；父亲矮于平均身高时，儿子身高比他更矮的概率要小于比他高的概率。</p>
+<p>意思就是说，<strong>拥有 “极端身高”的父亲，他们的儿子也并没有在身高上继续去“开疆拓土”，而是有向普通人身高回归的趋势。</strong></p>
+<p>高尔顿望着手里的这些数据和他的高尔顿板2.0，陷入了沉思。</p>
+<p><strong>真的有什么神秘力量吗？</strong></p>
+<p>其实想想也能知道，身高的遗传并不会像高尔顿板上的小球球一样，走势越来越极端。不然这样下去，过不了多少代，人类种族就将由特别高和特别矮的两极构成，满大街就都跑着姚明了。</p>
+<p>不仅身高、智商等遗传性状存在这样的“回归普通人群”现象，在生活中，还有很多事情也存在着蹊跷……</p>
+<ul>
+<li><em>在一次考试中，一个成绩普普通通的同学，这次考试中超常发挥考了95分，老师表扬了他的进步。但下次考试他的成绩立刻滑落下去。老师觉得，是不是表扬不但不会让学生获得进步，还会让他们骄傲自满导致退步？</em></li>
+<li><em>NBA的选秀状元，会一夜成名变成媒体和大众眼中的红人。但是，很多状元在加入球队后，在一段时间内的表现会让人失望，是不是这些运动员被金钱和名声冲昏了头，自我膨胀了？ 还是他本来就是个“水货”？</em></li>
+<li><em>某公司刚上市，势头很猛，业绩剧增，你觉得它是个潜力股，赶紧买进做长线，结果赔了个底朝天。是不是这个公司为了上市而在数据上弄虚作假，上市后没几年就原形毕露了呢？</em></li>
+</ul>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/3lFjlY4eZpfp2cdDibb93V2YZf3CFotX5aReHygFwP0ic3VW7O5Kic6VrylAp3ahr29vY2SydxiaALCZI2Muic6PuzQ/640" alt="img"></p>
+<p>但事实真相往往不像人们想象的那样。</p>
+<p>学生在考试中超常发挥或者失常发挥都是极端事件，被表扬后考得不如上次好，可能只是从极端事件回归到正常水平罢了；而NBA新秀在选秀中可能也只是超常发挥，如果这种超高水平表现在之后没有靠超出常人的努力来维持，其随后表现平平就再正常不过了；某只股票收益突飞猛进可能也是一种极端情形，第二年就很可能要反弹。</p>
+<p>超级高个子家长的孩子身高可能不会再继续变得更高，以及上面讲到的学生、球员、股票在“极端表现”之后“回归普通表现”的现象，叫做<strong>回归效应。</strong></p>
+<p><strong>其实回归效应就是个简单的统计学现象，也不是什么大自然的神秘力量作祟，只是在统计学上样本达到一定数量之后出现的必然规律而已。</strong></p>
+<p>虽然很多领域，如经济学、工程学、心理学等，都存在回归效应，但很多时候人们在直观感觉上不大习惯这个概念。<strong>他们会认为极端值是正常水平，当回归效应出现时，人们喜欢找其他的因果关系来解释，并据此做出错误的决策。</strong>比如心理学研究发现，为提高学习和工作成绩，表扬鼓励比批评惩罚更有效。但前文中提到的老师，把学生成绩回归普通的原因归结为受到表扬后骄傲自满，这样他以后可能就不会再对取得优异成绩的学生进行夸奖了。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/弹珠/" rel="tag"># 弹珠</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/21/证明-我是一道数学题/" rel="next" title="证明:我是一道数学题">
+                <i class="fa fa-chevron-left"></i> 证明:我是一道数学题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/YingHuoooo.jpg" alt="YingHuoooo">
+            
+              <p class="site-author-name" itemprop="name">YingHuoooo</p>
+              <div class="site-description motion-element" itemprop="description">记录生活 分享知识</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#弹珠玩具启示录"><span class="nav-number">1.</span> <span class="nav-text">弹珠玩具启示录</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YingHuoooo</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
