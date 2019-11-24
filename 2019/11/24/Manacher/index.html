@@ -96,18 +96,24 @@
 
 
 
-  <meta name="description" content="纽卡姆悖论悖论内容​    这个模型里有一个负责“神预言”的角色，他可以十分准确地预言每一个人在二者择一时会选择哪一个。他用 两个大箱子检验了很多人。箱子A是透明的，总是装着1万美元。箱子B不透明 。你有两种选择，一种是你拿走两个箱子，可以获得其中的东西。可是，当他预计你这样做时，我就让箱子B空着。你就只能得到1万美元。另一种选择是只拿一个箱子B。如果我预计你这样做时，我就放进箱子B中1百万美元。">
-<meta name="keywords" content="悖论">
+  <meta name="description" content="Manacher首先，Manacher算法提供了一种巧妙地办法，将长度为奇数的回文串和长度为偶数的回文串一起考虑，具体做法是，在原字符串的每个相邻两个字符中间插入一个分隔符，同时在首尾也要添加一个分隔符，分隔符的要求是不在原串中出现，一般情况下可以用#号。下面举一个例子：  （1）Len数组简介与性质Manacher算法用一个辅助数组Len[i]表示以字符T[i]为中心的最长回文字串的最右字符到T">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="纽卡姆悖论">
-<meta property="og:url" content="http://yoursite.com/2019/08/20/纽卡姆悖论/index.html">
+<meta property="og:title" content="Manacher">
+<meta property="og:url" content="http://yoursite.com/2019/11/24/Manacher/index.html">
 <meta property="og:site_name" content="YingHuoooo&#39;s Blog">
-<meta property="og:description" content="纽卡姆悖论悖论内容​    这个模型里有一个负责“神预言”的角色，他可以十分准确地预言每一个人在二者择一时会选择哪一个。他用 两个大箱子检验了很多人。箱子A是透明的，总是装着1万美元。箱子B不透明 。你有两种选择，一种是你拿走两个箱子，可以获得其中的东西。可是，当他预计你这样做时，我就让箱子B空着。你就只能得到1万美元。另一种选择是只拿一个箱子B。如果我预计你这样做时，我就放进箱子B中1百万美元。">
+<meta property="og:description" content="Manacher首先，Manacher算法提供了一种巧妙地办法，将长度为奇数的回文串和长度为偶数的回文串一起考虑，具体做法是，在原字符串的每个相邻两个字符中间插入一个分隔符，同时在首尾也要添加一个分隔符，分隔符的要求是不在原串中出现，一般情况下可以用#号。下面举一个例子：  （1）Len数组简介与性质Manacher算法用一个辅助数组Len[i]表示以字符T[i]为中心的最长回文字串的最右字符到T">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-20T13:25:30.438Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20141221160146166">
+<meta property="og:image" content="http://img.blog.csdn.net/20141221160159348">
+<meta property="og:image" content="http://img.blog.csdn.net/20141221160212654">
+<meta property="og:image" content="http://img.blog.csdn.net/20141221160232375">
+<meta property="og:image" content="http://img.blog.csdn.net/20141221160247614">
+<meta property="og:updated_time" content="2019-11-24T14:46:30.369Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="纽卡姆悖论">
-<meta name="twitter:description" content="纽卡姆悖论悖论内容​    这个模型里有一个负责“神预言”的角色，他可以十分准确地预言每一个人在二者择一时会选择哪一个。他用 两个大箱子检验了很多人。箱子A是透明的，总是装着1万美元。箱子B不透明 。你有两种选择，一种是你拿走两个箱子，可以获得其中的东西。可是，当他预计你这样做时，我就让箱子B空着。你就只能得到1万美元。另一种选择是只拿一个箱子B。如果我预计你这样做时，我就放进箱子B中1百万美元。">
+<meta name="twitter:title" content="Manacher">
+<meta name="twitter:description" content="Manacher首先，Manacher算法提供了一种巧妙地办法，将长度为奇数的回文串和长度为偶数的回文串一起考虑，具体做法是，在原字符串的每个相邻两个字符中间插入一个分隔符，同时在首尾也要添加一个分隔符，分隔符的要求是不在原串中出现，一般情况下可以用#号。下面举一个例子：  （1）Len数组简介与性质Manacher算法用一个辅助数组Len[i]表示以字符T[i]为中心的最长回文字串的最右字符到T">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20141221160146166">
 
 
 
@@ -115,7 +121,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/08/20/纽卡姆悖论/">
+  <link rel="canonical" href="http://yoursite.com/2019/11/24/Manacher/">
 
 
 
@@ -125,7 +131,7 @@
   };
 </script>
 
-  <title>纽卡姆悖论 | YingHuoooo's Blog</title>
+  <title>Manacher | YingHuoooo's Blog</title>
   
 
 
@@ -328,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/20/纽卡姆悖论/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/24/Manacher/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YingHuoooo">
@@ -345,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">纽卡姆悖论
+          <h1 class="post-title" itemprop="name headline">Manacher
 
               
             
@@ -371,7 +377,7 @@
                 
               
 
-              <time title="Created: 2019-08-20 21:22:42 / Modified: 21:25:30" itemprop="dateCreated datePublished" datetime="2019-08-20T21:22:42+08:00">2019-08-20</time>
+              <time title="Created: 2019-11-24 22:45:50 / Modified: 22:46:30" itemprop="dateCreated datePublished" datetime="2019-11-24T22:45:50+08:00">2019-11-24</time>
             
 
             
@@ -410,18 +416,23 @@
       
 
       
-        <h2 id="纽卡姆悖论"><a href="#纽卡姆悖论" class="headerlink" title="纽卡姆悖论"></a>纽卡姆悖论</h2><h3 id="悖论内容"><a href="#悖论内容" class="headerlink" title="悖论内容"></a>悖论内容</h3><p>​    这个模型里有一个负责“神预言”的角色，他可以十分准确地预言每一个人在二者择一时会选择哪一个。他用 两个大箱子检验了很多人。箱子A是透明的，总是装着1万美元。箱子B不透明 。你有两种选择，一种是你拿走两个箱子，可以获得其中的东西。可是，当他预计你这样做时，我就让箱子B空着。你就只能得到1万美元。另一种选择是只拿一个箱子B。如果我预计你这样做时，我就放进箱子B中1百万美元。你能得到全部钱款。</p>
-<h3 id="到底谁是傻瓜"><a href="#到底谁是傻瓜" class="headerlink" title="到底谁是傻瓜"></a>到底谁是傻瓜</h3><p>​    纽卡姆悖论这个模型中的最优解是什么？到底应该拿一个盒子还是应该拿两个？对于这个问题，学者们立场鲜明地分为了两个派别，其中每一派都认为对方“很傻”。</p>
-<p>​    其中一派认为很显然要拿两个，他们的观点是：</p>
-<p><strong>盲盒里可能有100万也可能是空的，如果是空的，我显然应该两个都拿，这样至少还能得到1万；如果盲盒里有100万，我也应该两个都拿，多一万总比没有好。想象有个长了透视眼的朋友正在一旁看着这两个盒子，从预言家把盒子放好之后，一切就都成了定局，里面的东西不会改变。这位朋友会觉得那个放着一万块钱的盒子你不拿白不拿，有钱不拿你不是傻吗。</strong></p>
-<p>​    这一派的想法叫做“既有存在法”，这也是目前的主流思想。</p>
-<p>​    而另一部分哲学家认为只拿一个才是真理，他们的观点是：</p>
-<p><strong>既然既往经验中，那些拿两个盒子的人总是只拿到1万元，那些只拿黑盒子的人拿到了100万元。你并不会成为特例。如果你有一个热衷投资和赌博的朋友正在观察这个场景，他会计算出就算神明预测的准确率只有90%，只拿一个黑盒子的期望收益仍然要远远高出拿两个盒子。那么拿两个盒子的你不是傻瓜吗？</strong></p>
-<p>​    这一派的观点叫做“证据参考法”。</p>
-<p>​    1970年，哈佛大学的一位哲学家罗伯特·诺齐克（Robert Nozick）在一篇题为“纽卡姆问题和两种选择原则”的论文中得出了以下结论：如果你把这个游戏里的预言家角色当成真正的神，并且坚定地相信决定论（认为个人并无选择个性或行为的自由, 因为这一切都由其背景、环境所决定，并且神知道你未来的每一个细节），那么你应该选择只拿黑盒子。 </p>
-<h3 id="人的自由意志"><a href="#人的自由意志" class="headerlink" title="人的自由意志"></a>人的自由意志</h3><p>​    有的机灵鬼儿想了一个破解纽卡姆悖论的方法：欺骗神明/机器——你要先形成只拿一个盒子的意图，且不能显露出你将不会执行这个意图。神明就会在黑盒子里放钱，在他放好钱后你再改变决定，拿两个盒子。 可是你真的能形成一个完美的意图吗? </p>
-<p>​    想起来一篇科幻小说《前路迢迢》。是著名科幻小说作家 特德·姜写的，里面描述了一种装置“预言器”，这是一个小小的装置，上面只有一个按钮和一个发光二极管，还有一个特殊的回路，这个回路的作用就是，当你按下这个按钮的时候，它就会向你按下按钮的一秒前发射一个信号点亮这个二极管。 也就是说，只要灯亮了，一定是你按下了这个按钮。虽然听上去是个非常无聊的装置</p>
-<p>​    但是它的存在引发了一个问题：人到底有没有自由意志？ </p>
+        <h1 id="Manacher"><a href="#Manacher" class="headerlink" title="Manacher"></a><strong>Manacher</strong></h1><p>首先，Manacher算法提供了一种巧妙地办法，将长度为奇数的回文串和长度为偶数的回文串一起考虑，具体做法是，在原字符串的每个相邻两个字符中间插入一个分隔符，同时在首尾也要添加一个分隔符，分隔符的要求是不在原串中出现，一般情况下可以用#号。下面举一个例子：</p>
+<p><img src="http://img.blog.csdn.net/20141221160146166" alt="img"></p>
+<h3 id="（1）Len数组简介与性质"><a href="#（1）Len数组简介与性质" class="headerlink" title="（1）Len数组简介与性质"></a>（1）Len数组简介与性质</h3><p>Manacher算法用一个辅助数组Len[i]表示以字符T[i]为中心的最长回文字串的最右字符到T[i]的长度，比如以T[i]为中心的最长回文字串是T[l,r],那么Len[i]=r-i+1。</p>
+<p>对于上面的例子，可以得出Len[i]数组为:</p>
+<p><img src="http://img.blog.csdn.net/20141221160159348" alt="img"></p>
+<p>Len数组有一个性质，<strong>那就是Len[i]-1就是该回文子串在原字符串S中的长度，至于证明，首先在转换得到的字符串T中，所有的回文字串的长度都为奇数，那么对于以T[i]为中心的最长回文字串，其长度就为2*Len[i]-1,经过观察可知，T中所有的回文子串，其中分隔符的数量一定比其他字符的数量多1，也就是有Len[i]个分隔符，剩下Len[i]-1个字符来自原字符串，所以该回文串在原字符串中的长度就为Len[i]-1。</strong></p>
+<p>有了这个性质，那么原问题就转化为求所有的Len[i]。下面介绍如何在线性时间复杂度内求出所有的Len。</p>
+<h3 id="（2）Len数组的计算"><a href="#（2）Len数组的计算" class="headerlink" title="（2）Len数组的计算"></a><strong>（2）Len数组的计算</strong></h3><p>首先从左往右依次计算Len[i]，当计算Len[i]时，Len<a href="0&lt;=j&lt;i">j</a>已经计算完毕。设P为之前计算中最长回文子串的右端点的最大值，并且设取得这个最大值的位置为po，分两种情况：</p>
+<p>第一种情况：i&lt;=P</p>
+<p>那么找到i相对于po的对称位置，设为j，那么如果Len[j]&lt;P-i，如下图：</p>
+<p><img src="http://img.blog.csdn.net/20141221160212654" alt="img"></p>
+<p>那么说明以j为中心的回文串一定在以po为中心的回文串的内部，且j和i关于位置po对称，由回文串的定义可知，一个回文串反过来还是一个回文串，所以以i为中心的回文串的长度至少和以j为中心的回文串一样，即Len[i]&gt;=Len[j]。因为Len[j]&lt;P-i,所以说i+Len[j]&lt;P。由对称性可知Len[i]=Len[j]。</p>
+<p>如果Len[j]&gt;=P-i,由对称性，说明以i为中心的回文串可能会延伸到P之外，而大于P的部分我们还没有进行匹配，所以要从P+1位置开始一个一个进行匹配，直到发生失配，从而更新P和对应的po以及Len[i]。</p>
+<p><img src="http://img.blog.csdn.net/20141221160232375" alt="img"></p>
+<p>第二种情况: i&gt;P</p>
+<p>如果i比P还要大，说明对于中点为i的回文串还一点都没有匹配，这个时候，就只能老老实实地一个一个匹配了，匹配完成后要更新P的位置和对应的po以及Len[i]。</p>
+<p><img src="http://img.blog.csdn.net/20141221160247614" alt="img"></p>
 
       
     </div>
@@ -445,7 +456,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/悖论/" rel="tag"># 悖论</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
         </div>
       
@@ -458,8 +469,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/13/JVM中的Classloader/" rel="next" title="JVM中的Classloader">
-                <i class="fa fa-chevron-left"></i> JVM中的Classloader
+              <a href="/2019/11/22/弹珠玩具启示录/" rel="next" title="弹珠玩具启示录">
+                <i class="fa fa-chevron-left"></i> 弹珠玩具启示录
               </a>
             
           </div>
@@ -467,10 +478,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/24/杂谈/" rel="prev" title="杂谈">
-                杂谈 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -614,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#纽卡姆悖论"><span class="nav-number">1.</span> <span class="nav-text">纽卡姆悖论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#悖论内容"><span class="nav-number">1.1.</span> <span class="nav-text">悖论内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#到底谁是傻瓜"><span class="nav-number">1.2.</span> <span class="nav-text">到底谁是傻瓜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#人的自由意志"><span class="nav-number">1.3.</span> <span class="nav-text">人的自由意志</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Manacher"><span class="nav-number">1.</span> <span class="nav-text">Manacher</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）Len数组简介与性质"><span class="nav-number">1.0.1.</span> <span class="nav-text">（1）Len数组简介与性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）Len数组的计算"><span class="nav-number">1.0.2.</span> <span class="nav-text">（2）Len数组的计算</span></a></li></ol></li></ol></div>
             
 
           </div>
