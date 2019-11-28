@@ -96,24 +96,23 @@
 
 
 
-  <meta name="description" content="Manacher首先，Manacher算法提供了一种巧妙地办法，将长度为奇数的回文串和长度为偶数的回文串一起考虑，具体做法是，在原字符串的每个相邻两个字符中间插入一个分隔符，同时在首尾也要添加一个分隔符，分隔符的要求是不在原串中出现，一般情况下可以用#号。下面举一个例子：  （1）Len数组简介与性质Manacher算法用一个辅助数组Len[i]表示以字符T[i]为中心的最长回文字串的最右字符到T">
-<meta name="keywords" content="算法">
+  <meta name="description" content="幽灵客人天才也有想不明白的问题《关于两种新科学的对话》在这本著作中，伽利略发表了一些犀利的洞察，比如“世间万物不能按照线性比例放大”，但他也提出了一些自己尚未想通的事。 困扰了伽利略的是这样一个问题：正整数集合 {1, 2, 3, 4, ⋯} 和平方数集合 {1, 4, 9, 16, ⋯} 哪个大？  一方面，每个正整数平方都唯一地对应了一个平方数，两个集合大小应该相等才对。而另一方面，正整数集合">
+<meta name="keywords" content="无穷级">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Manacher">
-<meta property="og:url" content="http://yoursite.com/2019/11/24/Manacher/index.html">
+<meta property="og:title" content="幽灵客人">
+<meta property="og:url" content="http://yoursite.com/2019/11/28/幽灵客人/index.html">
 <meta property="og:site_name" content="YingHuoooo&#39;s Blog">
-<meta property="og:description" content="Manacher首先，Manacher算法提供了一种巧妙地办法，将长度为奇数的回文串和长度为偶数的回文串一起考虑，具体做法是，在原字符串的每个相邻两个字符中间插入一个分隔符，同时在首尾也要添加一个分隔符，分隔符的要求是不在原串中出现，一般情况下可以用#号。下面举一个例子：  （1）Len数组简介与性质Manacher算法用一个辅助数组Len[i]表示以字符T[i]为中心的最长回文字串的最右字符到T">
+<meta property="og:description" content="幽灵客人天才也有想不明白的问题《关于两种新科学的对话》在这本著作中，伽利略发表了一些犀利的洞察，比如“世间万物不能按照线性比例放大”，但他也提出了一些自己尚未想通的事。 困扰了伽利略的是这样一个问题：正整数集合 {1, 2, 3, 4, ⋯} 和平方数集合 {1, 4, 9, 16, ⋯} 哪个大？  一方面，每个正整数平方都唯一地对应了一个平方数，两个集合大小应该相等才对。而另一方面，正整数集合">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20141221160146166">
-<meta property="og:image" content="http://img.blog.csdn.net/20141221160159348">
-<meta property="og:image" content="http://img.blog.csdn.net/20141221160212654">
-<meta property="og:image" content="http://img.blog.csdn.net/20141221160232375">
-<meta property="og:image" content="http://img.blog.csdn.net/20141221160247614">
-<meta property="og:updated_time" content="2019-11-24T14:46:30.369Z">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdnhtkybWU7D1SMM7zjicIG1CDeibtNxQOP4TjyaBMfAK3BtB0tEmhAgf5LoiasbibLiaCC2CMXnuM3gEQ/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdnhtkybWU7D1SMM7zjicIG1uYic4SQ779a3xQJDQMAWicrupLaFSwyPQRbt02R3Mxulmic45XLyjOcPA/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdnhtkybWU7D1SMM7zjicIG1Fq3jOD8hqoMMHN74zLPS2IoibcHibx1qiaicN68DgAPw8lGkQ3V4c74V7Q/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/3lFjlY4eZpdnhtkybWU7D1SMM7zjicIG1wxicXUZmkhUmDicn5dwszIqHcvwGBrW2Wp92aucAE75ZNqicI4LAliccEw/640">
+<meta property="og:updated_time" content="2019-11-28T05:51:23.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Manacher">
-<meta name="twitter:description" content="Manacher首先，Manacher算法提供了一种巧妙地办法，将长度为奇数的回文串和长度为偶数的回文串一起考虑，具体做法是，在原字符串的每个相邻两个字符中间插入一个分隔符，同时在首尾也要添加一个分隔符，分隔符的要求是不在原串中出现，一般情况下可以用#号。下面举一个例子：  （1）Len数组简介与性质Manacher算法用一个辅助数组Len[i]表示以字符T[i]为中心的最长回文字串的最右字符到T">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20141221160146166">
+<meta name="twitter:title" content="幽灵客人">
+<meta name="twitter:description" content="幽灵客人天才也有想不明白的问题《关于两种新科学的对话》在这本著作中，伽利略发表了一些犀利的洞察，比如“世间万物不能按照线性比例放大”，但他也提出了一些自己尚未想通的事。 困扰了伽利略的是这样一个问题：正整数集合 {1, 2, 3, 4, ⋯} 和平方数集合 {1, 4, 9, 16, ⋯} 哪个大？  一方面，每个正整数平方都唯一地对应了一个平方数，两个集合大小应该相等才对。而另一方面，正整数集合">
+<meta name="twitter:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdnhtkybWU7D1SMM7zjicIG1CDeibtNxQOP4TjyaBMfAK3BtB0tEmhAgf5LoiasbibLiaCC2CMXnuM3gEQ/640">
 
 
 
@@ -121,7 +120,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/11/24/Manacher/">
+  <link rel="canonical" href="http://yoursite.com/2019/11/28/幽灵客人/">
 
 
 
@@ -131,7 +130,7 @@
   };
 </script>
 
-  <title>Manacher | YingHuoooo's Blog</title>
+  <title>幽灵客人 | YingHuoooo's Blog</title>
   
 
 
@@ -334,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/24/Manacher/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/28/幽灵客人/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YingHuoooo">
@@ -351,7 +350,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Manacher
+          <h1 class="post-title" itemprop="name headline">幽灵客人
 
               
             
@@ -377,7 +376,7 @@
                 
               
 
-              <time title="Created: 2019-11-24 22:45:50 / Modified: 22:46:30" itemprop="dateCreated datePublished" datetime="2019-11-24T22:45:50+08:00">2019-11-24</time>
+              <time title="Created: 2019-11-28 13:50:09 / Modified: 13:51:23" itemprop="dateCreated datePublished" datetime="2019-11-28T13:50:09+08:00">2019-11-28</time>
             
 
             
@@ -416,23 +415,41 @@
       
 
       
-        <h1 id="Manacher"><a href="#Manacher" class="headerlink" title="Manacher"></a><strong>Manacher</strong></h1><p>首先，Manacher算法提供了一种巧妙地办法，将长度为奇数的回文串和长度为偶数的回文串一起考虑，具体做法是，在原字符串的每个相邻两个字符中间插入一个分隔符，同时在首尾也要添加一个分隔符，分隔符的要求是不在原串中出现，一般情况下可以用#号。下面举一个例子：</p>
-<p><img src="http://img.blog.csdn.net/20141221160146166" alt="img"></p>
-<h3 id="（1）Len数组简介与性质"><a href="#（1）Len数组简介与性质" class="headerlink" title="（1）Len数组简介与性质"></a>（1）Len数组简介与性质</h3><p>Manacher算法用一个辅助数组Len[i]表示以字符T[i]为中心的最长回文字串的最右字符到T[i]的长度，比如以T[i]为中心的最长回文字串是T[l,r],那么Len[i]=r-i+1。</p>
-<p>对于上面的例子，可以得出Len[i]数组为:</p>
-<p><img src="http://img.blog.csdn.net/20141221160159348" alt="img"></p>
-<p>Len数组有一个性质，<strong>那就是Len[i]-1就是该回文子串在原字符串S中的长度，至于证明，首先在转换得到的字符串T中，所有的回文字串的长度都为奇数，那么对于以T[i]为中心的最长回文字串，其长度就为2*Len[i]-1,经过观察可知，T中所有的回文子串，其中分隔符的数量一定比其他字符的数量多1，也就是有Len[i]个分隔符，剩下Len[i]-1个字符来自原字符串，所以该回文串在原字符串中的长度就为Len[i]-1。</strong></p>
-<p>有了这个性质，那么原问题就转化为求所有的Len[i]。下面介绍如何在线性时间复杂度内求出所有的Len。</p>
-<h3 id="（2）Len数组的计算"><a href="#（2）Len数组的计算" class="headerlink" title="（2）Len数组的计算"></a><strong>（2）Len数组的计算</strong></h3><p>首先从左往右依次计算Len[i]，当计算Len[i]时，Len<a href="0&lt;=j&lt;i">j</a>已经计算完毕。设P为之前计算中最长回文子串的右端点的最大值，并且设取得这个最大值的位置为po，分两种情况：</p>
-<p>第一种情况：i&lt;=P</p>
-<p>那么找到i相对于po的对称位置，设为j，那么如果Len[j]&lt;P-i，如下图：</p>
-<p><img src="http://img.blog.csdn.net/20141221160212654" alt="img"></p>
-<p>那么说明以j为中心的回文串一定在以po为中心的回文串的内部，且j和i关于位置po对称，由回文串的定义可知，一个回文串反过来还是一个回文串，所以以i为中心的回文串的长度至少和以j为中心的回文串一样，即Len[i]&gt;=Len[j]。因为Len[j]&lt;P-i,所以说i+Len[j]&lt;P。由对称性可知Len[i]=Len[j]。</p>
-<p>如果Len[j]&gt;=P-i,由对称性，说明以i为中心的回文串可能会延伸到P之外，而大于P的部分我们还没有进行匹配，所以要从P+1位置开始一个一个进行匹配，直到发生失配，从而更新P和对应的po以及Len[i]。</p>
-<p><img src="http://img.blog.csdn.net/20141221160232375" alt="img"></p>
-<p>第二种情况: i&gt;P</p>
-<p>如果i比P还要大，说明对于中点为i的回文串还一点都没有匹配，这个时候，就只能老老实实地一个一个匹配了，匹配完成后要更新P的位置和对应的po以及Len[i]。</p>
-<p><img src="http://img.blog.csdn.net/20141221160247614" alt="img"></p>
+        <h1 id="幽灵客人"><a href="#幽灵客人" class="headerlink" title="幽灵客人"></a>幽灵客人</h1><h3 id="天才也有想不明白的问题"><a href="#天才也有想不明白的问题" class="headerlink" title="天才也有想不明白的问题"></a><strong>天才也有想不明白的问题</strong></h3><p>《关于两种新科学的对话》在这本著作中，伽利略发表了一些犀利的洞察，比如“世间万物不能按照线性比例放大”，但他也提出了一些自己尚未想通的事。</p>
+<p>困扰了伽利略的是这样一个问题：正整数集合 {1, 2, 3, 4, ⋯} 和平方数集合 {1, 4, 9, 16, ⋯} 哪个大？</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdnhtkybWU7D1SMM7zjicIG1CDeibtNxQOP4TjyaBMfAK3BtB0tEmhAgf5LoiasbibLiaCC2CMXnuM3gEQ/640" alt="img"></p>
+<p>一方面，每个正整数平方都唯一地对应了一个平方数，两个集合大小应该相等才对。而另一方面，正整数集合里包含了所有的平方数，按照传统理论，“部分”怎么能等于“整体”呢？</p>
+<p>这个悖论不但让伽利略百思不得解，也困扰了当时的很多数学家。</p>
+<p>终于，19 世纪，德国出现了一位伟大的数学家<strong>格奥尔格·康托尔</strong>（Georg Cantor），在“集合”这个问题上进行了更完善更成体系的思考。</p>
+<p>下面我们就来领略一下康托尔的经典理论吧。</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdnhtkybWU7D1SMM7zjicIG1uYic4SQ779a3xQJDQMAWicrupLaFSwyPQRbt02R3Mxulmic45XLyjOcPA/640" alt="img"><br><em>帅气的康托尔，为数学奉献一生最后住进了精神病院</em></p>
+<p><strong>让每个客人都能拿到自己的“房卡”</strong></p>
+<p>同样是无穷集合，如果集合里的元素能够与全体正整数<strong>构成一一对应的关系</strong>，我们就说它是可数的，否则就说它是不可数的。 </p>
+<p>比如我们说集合 A 可数，意味着集合 A 里所有元素都可以拥有不重复的编号。对应到酒店这个场景，就意味着每个客人都能拿到属于自己的“房卡”。</p>
+<p>举例来说，全体奇数的集合{1,3,5,7…}可以这样编号，1 是 1 号，3 是 2 号，5 是 3 号，7 是 4 号……如此进行下去，集合中的每个奇数都会获得一个编号，且不会重复。</p>
+<p>同样，全体偶数的集合也是“可数的无穷集合”。</p>
+<p>那么分数呢？我们知道分数也是无穷的，那这些无穷的分数都可以分配到唯一的编号吗？</p>
+<p>分数可以看作是由分子和分母两个整数的组合所构成的数字，那么数分数的个数可以用数整数组合的形式来代替。</p>
+<p>我们按下面的方式为所有分数编号，1/1 对应 1 号，2/1 对应 2 号，1/2 对应 3 号，1/3 对应 4 号……注意图中加粗的分数，都是约分以后等于前面出现过的某个分数，编号时可以忽略不计。</p>
+<p>​             <img src="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdnhtkybWU7D1SMM7zjicIG1Fq3jOD8hqoMMHN74zLPS2IoibcHibx1qiaicN68DgAPw8lGkQ3V4c74V7Q/640" alt="img"></p>
+<p>我们可以清晰地看到，每个分数（即整数组合）都能和一个自然数相对应。虽然有无限多的分数，但都是可以编号的。如同我们在给车里的客人们安排房间一样。无论你是二号车的第三名客人，还是九号车的第八名客人，都能领到自己的那张专属房卡。所以可以说分数也是一种“可数的无穷集合”。</p>
+<h3 id="“幽灵客人”是怎么来的？"><a href="#“幽灵客人”是怎么来的？" class="headerlink" title="“幽灵客人”是怎么来的？"></a><strong>“幽灵客人”是怎么来的？</strong></h3><p>1874 年， 康托尔在他的论文中提到<strong>“虽然全体有理数甚至是全体代数都是可数的，但全体实数（有理数和无理数的总称）却是不可数的。”</strong></p>
+<p><strong>换句话说，同样是无穷多，“实数集合”可以对着“有理数集合”说：“我们不一样！”</strong></p>
+<p>事实上，实数区间 (0, 1) 就已经是一个不可数的集合了。换句话说，你绝不可能用“第一个数是某某某，第二个数是某某某”的方式把 0 到 1 之间的所有实数一个不漏地列举出来。总会有一个数字，它不在你的列表里，像“幽灵客人”一样，无法被安排在入住名单上。</p>
+<p>康托尔的证明思路是这样的：</p>
+<p>假设你把实数区间 (0, 1) 里的所有数按照某种顺序排列起来写在一个列表上：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/3lFjlY4eZpdnhtkybWU7D1SMM7zjicIG1wxicXUZmkhUmDicn5dwszIqHcvwGBrW2Wp92aucAE75ZNqicI4LAliccEw/640" alt="img"></p>
+<p>现在我问你，你能写全吗？你说，如果有张无限大的纸，就可以写全。</p>
+<p>不，你写不全。因为我能构造这么一个数，它的小数点后第一位不等于 No.1(小数点后) 的第一位，小数点后第二位不等于 No.2 的第二位，总之小数点后第 i 位不等于 No.i 的第 i 位。这个数属于实数区间 (0, 1) ，但它显然不在这个的列表里，因为它和你列表里的每一个数都有至少一位是不同的。</p>
+<p>通过这个巧妙又气人的方法，我们就证明了实数区间是不可数的。</p>
+<p>我们现在知道了，<strong>虽然都是无穷大，但“所有实数”的集合，和“所有有理数”、“所有自然数”的集合比起来，他们是不一样的！ “无穷大”和“无穷大”之间也是分伯仲的。</strong></p>
+<p>我们不一样，每个人有不同的基数</p>
+<p>康托尔除了提出了“两种无穷大”，还提出了比较集合大小的方法，解决了伽利略遗留下来的难题。</p>
+<p>康托尔定义了表示无穷集合的“大小”的术语，叫做<strong>基数(cardinal number)，也叫势(cardinality)</strong>。如果两个无穷集合之间如果能够建立一个一一对应关系，就说这两个集合“<strong>等势”或“有相同的基数。</strong></p>
+<p>这种“一一对应”的思想伽利略当年也使用到了，可惜他没有沿着这个思路更进一步思考下去。</p>
+<p>我们现在知道了自然数集合、有理数集合、整数集合、奇数集合、偶数集合都具有相同的基数， 也知道了上述集合的基数，与所有实数的集合的基数是不相等的。实数的数量比有理数数量高出了一个级别，它比“无穷大”更“无穷大”。</p>
+<p>在康托尔的研究之前，人们只辨认出有限集与无穷集这两种类型的集合，无人试图对无穷集再作什么区分，而优秀的康托尔对无限集合进行了深入研究，得到了我们前文中的那些让人啧啧称奇的理论。他的这些研究被当时的一些数学家骂得狗血淋头，称他为“业界毒瘤”，但是却得到了德国数学家戴维·希尔伯特的高度赞赏。</p>
+<p>领悟了康托尔的理论之后，今后仰望满天无边无际的繁星时，想象着宇宙之大时，对于“无限究竟是什么”，是不是又有了不一样的体会呢。</p>
 
       
     </div>
@@ -456,7 +473,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/无穷级/" rel="tag"># 无穷级</a>
           
         </div>
       
@@ -469,8 +486,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/22/弹珠玩具启示录/" rel="next" title="弹珠玩具启示录">
-                <i class="fa fa-chevron-left"></i> 弹珠玩具启示录
+              <a href="/2019/11/27/感官丧失箱/" rel="next" title="感官丧失箱">
+                <i class="fa fa-chevron-left"></i> 感官丧失箱
               </a>
             
           </div>
@@ -478,10 +495,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/25/理解策略梯度算法/" rel="prev" title="理解策略梯度算法">
-                理解策略梯度算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -633,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Manacher"><span class="nav-number">1.</span> <span class="nav-text">Manacher</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）Len数组简介与性质"><span class="nav-number">1.0.1.</span> <span class="nav-text">（1）Len数组简介与性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）Len数组的计算"><span class="nav-number">1.0.2.</span> <span class="nav-text">（2）Len数组的计算</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#幽灵客人"><span class="nav-number">1.</span> <span class="nav-text">幽灵客人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#天才也有想不明白的问题"><span class="nav-number">1.0.1.</span> <span class="nav-text">天才也有想不明白的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“幽灵客人”是怎么来的？"><span class="nav-number">1.0.2.</span> <span class="nav-text">“幽灵客人”是怎么来的？</span></a></li></ol></li></ol></div>
             
 
           </div>
