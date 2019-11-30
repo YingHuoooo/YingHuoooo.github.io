@@ -96,24 +96,25 @@
 
 
 
-  <meta name="description" content="Manacher首先，Manacher算法提供了一种巧妙地办法，将长度为奇数的回文串和长度为偶数的回文串一起考虑，具体做法是，在原字符串的每个相邻两个字符中间插入一个分隔符，同时在首尾也要添加一个分隔符，分隔符的要求是不在原串中出现，一般情况下可以用#号。下面举一个例子：  （1）Len数组简介与性质Manacher算法用一个辅助数组Len[i]表示以字符T[i]为中心的最长回文字串的最右字符到T">
-<meta name="keywords" content="算法">
+  <meta name="description" content="自动化监狱英国哲学家边沁（Jeremy Bentham）提出了“全景监狱”，由一个环形的监狱大楼和一座位于圆心的瞭望塔构成。  监狱大楼拥有数量巨大的单人牢房，彼此互相隔绝，无法交流信息。同时牢房的玻璃也都是单向的，只能从外往里看，无法从里往外看。总之，每个犯人都被关在一个与世隔绝的小房间中。在囚犯服刑期间，无论白天黑夜、工作休息、沐浴进食，一切活动都在这个独立的小房间中进行。 瞭望塔视野开阔，每">
+<meta name="keywords" content="趣闻">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Manacher">
-<meta property="og:url" content="http://yoursite.com/2019/11/24/Manacher/index.html">
+<meta property="og:title" content="自动化监狱">
+<meta property="og:url" content="http://yoursite.com/2019/11/30/自动化监狱/index.html">
 <meta property="og:site_name" content="YingHuoooo&#39;s Blog">
-<meta property="og:description" content="Manacher首先，Manacher算法提供了一种巧妙地办法，将长度为奇数的回文串和长度为偶数的回文串一起考虑，具体做法是，在原字符串的每个相邻两个字符中间插入一个分隔符，同时在首尾也要添加一个分隔符，分隔符的要求是不在原串中出现，一般情况下可以用#号。下面举一个例子：  （1）Len数组简介与性质Manacher算法用一个辅助数组Len[i]表示以字符T[i]为中心的最长回文字串的最右字符到T">
+<meta property="og:description" content="自动化监狱英国哲学家边沁（Jeremy Bentham）提出了“全景监狱”，由一个环形的监狱大楼和一座位于圆心的瞭望塔构成。  监狱大楼拥有数量巨大的单人牢房，彼此互相隔绝，无法交流信息。同时牢房的玻璃也都是单向的，只能从外往里看，无法从里往外看。总之，每个犯人都被关在一个与世隔绝的小房间中。在囚犯服刑期间，无论白天黑夜、工作休息、沐浴进食，一切活动都在这个独立的小房间中进行。 瞭望塔视野开阔，每">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20141221160146166">
-<meta property="og:image" content="http://img.blog.csdn.net/20141221160159348">
-<meta property="og:image" content="http://img.blog.csdn.net/20141221160212654">
-<meta property="og:image" content="http://img.blog.csdn.net/20141221160232375">
-<meta property="og:image" content="http://img.blog.csdn.net/20141221160247614">
-<meta property="og:updated_time" content="2019-11-29T06:06:01.029Z">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y2zJFianBmyfDqhXkFe5HTOk3v5AIjKvUmUbo1wQd5vPKT4jumRRT8ymw/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y2dzsx4QZe2StUTibEh0f8v7CQw6ibs1gmPqxxsBR2mY782ibfIvHibdLLHw/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y2CpvHUAJjaCwcuAwibVZhgicmFicBsYJktibrbxibAcmVRsH4CDDbtU2b4Zg/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y2ZUR7y0D9fYpiazwmgsFyvkgqXoAhS4orgt3Tm88ySF0srYicfialmJ9ug/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y2z2vIUmaNsyMoHGCL8hrzzCRP1WpZ2X670X06AQvahS4aYuIL1q8bGQ/640">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y23RanZkb74K0jvNOeZIQZfd0KicibV5OLoHHLTXFAL3mO64kgz8uqHfDg/640">
+<meta property="og:updated_time" content="2019-11-30T04:22:46.076Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Manacher">
-<meta name="twitter:description" content="Manacher首先，Manacher算法提供了一种巧妙地办法，将长度为奇数的回文串和长度为偶数的回文串一起考虑，具体做法是，在原字符串的每个相邻两个字符中间插入一个分隔符，同时在首尾也要添加一个分隔符，分隔符的要求是不在原串中出现，一般情况下可以用#号。下面举一个例子：  （1）Len数组简介与性质Manacher算法用一个辅助数组Len[i]表示以字符T[i]为中心的最长回文字串的最右字符到T">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20141221160146166">
+<meta name="twitter:title" content="自动化监狱">
+<meta name="twitter:description" content="自动化监狱英国哲学家边沁（Jeremy Bentham）提出了“全景监狱”，由一个环形的监狱大楼和一座位于圆心的瞭望塔构成。  监狱大楼拥有数量巨大的单人牢房，彼此互相隔绝，无法交流信息。同时牢房的玻璃也都是单向的，只能从外往里看，无法从里往外看。总之，每个犯人都被关在一个与世隔绝的小房间中。在囚犯服刑期间，无论白天黑夜、工作休息、沐浴进食，一切活动都在这个独立的小房间中进行。 瞭望塔视野开阔，每">
+<meta name="twitter:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y2zJFianBmyfDqhXkFe5HTOk3v5AIjKvUmUbo1wQd5vPKT4jumRRT8ymw/640">
 
 
 
@@ -121,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/11/24/Manacher/">
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/自动化监狱/">
 
 
 
@@ -131,7 +132,7 @@
   };
 </script>
 
-  <title>Manacher | YingHuoooo's Blog</title>
+  <title>自动化监狱 | YingHuoooo's Blog</title>
   
 
 
@@ -334,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/24/Manacher/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/自动化监狱/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YingHuoooo">
@@ -351,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Manacher
+          <h1 class="post-title" itemprop="name headline">自动化监狱
 
               
             
@@ -377,24 +378,12 @@
                 
               
 
-              <time title="Created: 2019-11-24 22:45:50" itemprop="dateCreated datePublished" datetime="2019-11-24T22:45:50+08:00">2019-11-24</time>
+              <time title="Created: 2019-11-30 12:21:45 / Modified: 12:22:46" itemprop="dateCreated datePublished" datetime="2019-11-30T12:21:45+08:00">2019-11-30</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-11-29 14:06:01" itemprop="dateModified" datetime="2019-11-29T14:06:01+08:00">2019-11-29</time>
               
             
           </span>
@@ -428,23 +417,34 @@
       
 
       
-        <h1 id="Manacher"><a href="#Manacher" class="headerlink" title="Manacher"></a><strong>Manacher</strong></h1><p>首先，Manacher算法提供了一种巧妙地办法，将长度为奇数的回文串和长度为偶数的回文串一起考虑，具体做法是，在原字符串的每个相邻两个字符中间插入一个分隔符，同时在首尾也要添加一个分隔符，分隔符的要求是不在原串中出现，一般情况下可以用#号。下面举一个例子：</p>
-<p><img src="http://img.blog.csdn.net/20141221160146166" alt="img"></p>
-<h3 id="（1）Len数组简介与性质"><a href="#（1）Len数组简介与性质" class="headerlink" title="（1）Len数组简介与性质"></a>（1）Len数组简介与性质</h3><p>Manacher算法用一个辅助数组Len[i]表示以字符T[i]为中心的最长回文字串的最右字符到T[i]的长度，比如以T[i]为中心的最长回文字串是T[l,r],那么Len[i]=r-i+1。</p>
-<p>对于上面的例子，可以得出Len[i]数组为:</p>
-<p><img src="http://img.blog.csdn.net/20141221160159348" alt="img"></p>
-<p>Len数组有一个性质，<strong>那就是Len[i]-1就是该回文子串在原字符串S中的长度，至于证明，首先在转换得到的字符串T中，所有的回文字串的长度都为奇数，那么对于以T[i]为中心的最长回文字串，其长度就为2*Len[i]-1,经过观察可知，T中所有的回文子串，其中分隔符的数量一定比其他字符的数量多1，也就是有Len[i]个分隔符，剩下Len[i]-1个字符来自原字符串，所以该回文串在原字符串中的长度就为Len[i]-1。</strong></p>
-<p>有了这个性质，那么原问题就转化为求所有的Len[i]。下面介绍如何在线性时间复杂度内求出所有的Len。</p>
-<h3 id="（2）Len数组的计算"><a href="#（2）Len数组的计算" class="headerlink" title="（2）Len数组的计算"></a><strong>（2）Len数组的计算</strong></h3><p>首先从左往右依次计算Len[i]，当计算Len[i]时，Len<a href="0&lt;=j&lt;i">j</a>已经计算完毕。设P为之前计算中最长回文子串的右端点的最大值，并且设取得这个最大值的位置为po，分两种情况：</p>
-<p>第一种情况：i&lt;=P</p>
-<p>那么找到i相对于po的对称位置，设为j，那么如果Len[j]&lt;P-i，如下图：</p>
-<p><img src="http://img.blog.csdn.net/20141221160212654" alt="img"></p>
-<p>那么说明以j为中心的回文串一定在以po为中心的回文串的内部，且j和i关于位置po对称，由回文串的定义可知，一个回文串反过来还是一个回文串，所以以i为中心的回文串的长度至少和以j为中心的回文串一样，即Len[i]&gt;=Len[j]。因为Len[j]&lt;P-i,所以说i+Len[j]&lt;P。由对称性可知Len[i]=Len[j]。</p>
-<p>如果Len[j]&gt;=P-i,由对称性，说明以i为中心的回文串可能会延伸到P之外，而大于P的部分我们还没有进行匹配，所以要从P+1位置开始一个一个进行匹配，直到发生失配，从而更新P和对应的po以及Len[i]。</p>
-<p><img src="http://img.blog.csdn.net/20141221160232375" alt="img"></p>
-<p>第二种情况: i&gt;P</p>
-<p>如果i比P还要大，说明对于中点为i的回文串还一点都没有匹配，这个时候，就只能老老实实地一个一个匹配了，匹配完成后要更新P的位置和对应的po以及Len[i]。</p>
-<p><img src="http://img.blog.csdn.net/20141221160247614" alt="img"></p>
+        <h1 id="自动化监狱"><a href="#自动化监狱" class="headerlink" title="自动化监狱"></a>自动化监狱</h1><p>英国哲学家边沁（Jeremy Bentham）提出了“全景监狱”，由一个环形的监狱大楼和一座位于圆心的瞭望塔构成。</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y2zJFianBmyfDqhXkFe5HTOk3v5AIjKvUmUbo1wQd5vPKT4jumRRT8ymw/640" alt="img"></p>
+<p>监狱大楼拥有数量巨大的单人牢房，彼此互相隔绝，无法交流信息。同时牢房的玻璃也都是单向的，只能从外往里看，无法从里往外看。总之，每个犯人都被关在一个与世隔绝的小房间中。在囚犯服刑期间，无论白天黑夜、工作休息、沐浴进食，一切活动都在这个独立的小房间中进行。</p>
+<p>瞭望塔视野开阔，每一个牢房都能一览无余，然而犯人们却看不到瞭望塔。这是一种单向的、全方位的、无死角的监视。 </p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y2dzsx4QZe2StUTibEh0f8v7CQw6ibs1gmPqxxsBR2mY782ibfIvHibdLLHw/640" alt="img"></p>
+<p>那么这种全景监狱有什么意义呢？它和我们的现实生活又有什么关系呢？</p>
+<h3 id="瘟疫背后的囚禁"><a href="#瘟疫背后的囚禁" class="headerlink" title="瘟疫背后的囚禁"></a><strong>瘟疫背后的囚禁</strong></h3><p>17 世纪末，为了应对破坏力极大的瘟疫，许多欧洲国家实行了比较严厉的戒严措施。</p>
+<p>具体来说就是，将城市分成若干区，各区由一名区长负责。每条街道再由一名里长负责，如果他离开了自己负责的街道，就会被处死。</p>
+<p>沿街设置通向各所房子的木制小通道，专门向居民们运送食物和水，这样每个人足不出户就能拿到日常所需，同时又不必与发放食物的人或自己的邻居发生任何联系。只有里长、区长以及卫兵可以在街道上走动，其他居民想要出门必须提前申请，而且每次只允许一个人出门。</p>
+<p>每天里长都会抽时间，去挨家挨户检查，让每一户居民的每一口人都在自家门前的小窗口旁露个脸。如果有人没出现，里长有责任问清他消失的原因，这样就能立刻发现被瘟疫感染的人。里长走后，小窗户必须紧锁，私自开窗者面临着死刑的危险。</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y2CpvHUAJjaCwcuAwibVZhgicmFicBsYJktibrbxibAcmVRsH4CDDbtU2b4Zg/640" alt="img"></p>
+<p>没错，仔细想一下。从门窗锁好的那一刻开始，每一户居民就被嵌在了固定的位置上，任何微小活动都会受到监视，任何可疑情况都会被记录下来。</p>
+<p>权力根据一种设定好的等级体制统一地运作着，整个城市被一个层级网络、监视系统所覆盖，统治着每一个肉体的日常活动。这就是一个完美城市的典范，它可以利用自身的秩序抵抗任何冲击，包括象征死亡的瘟疫。</p>
+<h3 id="全景敞视主义"><a href="#全景敞视主义" class="headerlink" title="全景敞视主义"></a><strong>全景敞视主义</strong></h3><p>后来社会学家福柯（Michel Foucault）将这种模式总结为全景敞视主义（Panopticism）。</p>
+<p>监视者和被监视者以一种信息不对称的方式联系起来。监视者能轻而易举地监视犯人们的日常行为，而被监视者却完全不知道监视塔里到底有没有人。为了不被抓到把柄，避免更多刑罚，被监视者们只能假设自己每时每刻都处于被监视的状态，从而严格要求自己，将良好行为培养成为一种习惯。</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y2ZUR7y0D9fYpiazwmgsFyvkgqXoAhS4orgt3Tm88ySF0srYicfialmJ9ug/640" alt="img"></p>
+<p>有没有感觉到似曾相识？</p>
+<p>想象一下自习课上，老师出去不知道干啥了，于是你把手伸向书包深处，准备摸出 手机休息一小会儿。结果就在碰到游戏机的一瞬间，你突然像触电一样打了个激灵，隐约感觉到教室后窗上射来一道锐利的目光。但是你又不敢回头看，万一四目相对岂不是显得自己做贼心虚？于是你只好放下 手机 继续看书……</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y2z2vIUmaNsyMoHGCL8hrzzCRP1WpZ2X670X06AQvahS4aYuIL1q8bGQ/640" alt="img"></p>
+<p>这就是全景敞视主义一个重要的意义：它的结构可以让监视实现自动化。</p>
+<p>自动化是指，监视者的身份已经不重要了，你甚至可以不知道这个系统的原理，不知道被监视者的具体情况。随便挑选任何人几乎都能胜任这份工作。</p>
+<p>另一方面，你甚至没必要出现在监视室里。因为被监视者们根本不知道你在哪儿，他们只能默认整个监视行为是全天候且无孔不入的。</p>
+<p>当然它也有很大的缺点，那就是权力过于集中。如果监视者不能严于律己，后果是很危险的。</p>
+<p>比如监视者出于好玩儿，跟 A 说天是绿的，跟 B 说 1+1=3，跟 C 说地球其实是一张大饼……当这些被监视者某一天回归社会时，他们还能正常生活吗？</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_jpg/3lFjlY4eZpdicoyTjfRk8NDib7rTnSp7y23RanZkb74K0jvNOeZIQZfd0KicibV5OLoHHLTXFAL3mO64kgz8uqHfDg/640" alt="img"></p>
+<h3 id="“共景监狱”"><a href="#“共景监狱”" class="headerlink" title="“共景监狱”"></a>“共景监狱”</h3><p>就像经典电影《楚门的世界》一样，男主在村镇上结婚生子，生活工作；而观众们在荧幕前观察着他的一举一动，一分一秒都不会放过。</p>
+<p>我们握有权力，别人也握有权力。当监视打破信息不对称的壁垒，成为一种日渐普及的行为时，我们既可以在网络暴力的影响下扼杀中华田园犬，也可以在不良媒体的带领下破坏红车女司机的人生。</p>
+<p>而我们自己，很多时候并没有意识到，监视者的权力是如此巨大。</p>
 
       
     </div>
@@ -468,7 +468,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/趣闻/" rel="tag"># 趣闻</a>
           
         </div>
       
@@ -481,8 +481,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/22/弹珠玩具启示录/" rel="next" title="弹珠玩具启示录">
-                <i class="fa fa-chevron-left"></i> 弹珠玩具启示录
+              <a href="/2019/11/29/荒诞医学史/" rel="next" title="荒诞医学史">
+                <i class="fa fa-chevron-left"></i> 荒诞医学史
               </a>
             
           </div>
@@ -490,10 +490,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/25/理解策略梯度算法/" rel="prev" title="理解策略梯度算法">
-                理解策略梯度算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -637,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Manacher"><span class="nav-number">1.</span> <span class="nav-text">Manacher</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）Len数组简介与性质"><span class="nav-number">1.0.1.</span> <span class="nav-text">（1）Len数组简介与性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）Len数组的计算"><span class="nav-number">1.0.2.</span> <span class="nav-text">（2）Len数组的计算</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#自动化监狱"><span class="nav-number">1.</span> <span class="nav-text">自动化监狱</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#瘟疫背后的囚禁"><span class="nav-number">1.0.1.</span> <span class="nav-text">瘟疫背后的囚禁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全景敞视主义"><span class="nav-number">1.0.2.</span> <span class="nav-text">全景敞视主义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“共景监狱”"><span class="nav-number">1.0.3.</span> <span class="nav-text">“共景监狱”</span></a></li></ol></li></ol></div>
             
 
           </div>
