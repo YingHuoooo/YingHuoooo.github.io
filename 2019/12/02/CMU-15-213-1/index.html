@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1.1 Information Is Bits + ContextAll information in a system is represented as a bunch of bits.The only thing that distinguishes different data objects is the context in which we view them.  1.2 Progr">
+<meta name="keywords" content="CMU 15-213">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CMU 15-213-1">
+<meta property="og:url" content="http://yoursite.com/2019/12/02/CMU-15-213-1/index.html">
+<meta property="og:site_name" content="YingHuoooo&#39;s Blog">
+<meta property="og:description" content="1.1 Information Is Bits + ContextAll information in a system is represented as a bunch of bits.The only thing that distinguishes different data objects is the context in which we view them.  1.2 Progr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.3.png">
+<meta property="og:image" content="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.4-e1500402753177.png">
+<meta property="og:image" content="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.9-e1500402631427.png">
+<meta property="og:image" content="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.11-e1500402815852.png">
+<meta property="og:image" content="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.13-e1500402864433.png">
+<meta property="og:image" content="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.18-e1500403099100.png">
+<meta property="og:updated_time" content="2019-12-02T09:17:05.388Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CMU 15-213-1">
+<meta name="twitter:description" content="1.1 Information Is Bits + ContextAll information in a system is represented as a bunch of bits.The only thing that distinguishes different data objects is the context in which we view them.  1.2 Progr">
+<meta name="twitter:image" content="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.3.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/12/02/CMU-15-213-1/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>CMU 15-213-1 | YingHuoooo's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YingHuoooo's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Stay hungry,stay foolish</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/02/CMU-15-213-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YingHuoooo">
+      <meta itemprop="description" content="记录生活 分享知识">
+      <meta itemprop="image" content="/images/YingHuoooo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YingHuoooo's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CMU 15-213-1
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-12-02 17:15:01 / Modified: 17:17:05" itemprop="dateCreated datePublished" datetime="2019-12-02T17:15:01+08:00">2019-12-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-1-Information-Is-Bits-Context"><a href="#1-1-Information-Is-Bits-Context" class="headerlink" title="1.1 Information Is Bits + Context"></a>1.1 Information Is Bits + Context</h1><p>All information in a system is represented as a bunch of bits.<br>The only thing that distinguishes different data objects is the context in which we view them.</p>
+<hr>
+<h1 id="1-2-Programs-Are-Translated-by-Other-Programs-into-Different-Forms"><a href="#1-2-Programs-Are-Translated-by-Other-Programs-into-Different-Forms" class="headerlink" title="1.2 Programs Are Translated by Other Programs into Different Forms"></a>1.2 Programs Are Translated by Other Programs into Different Forms</h1><p><img src="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.3.png" alt="CSAPP-Figure-1.3"></p>
+<p><strong>Figure 1.3: The compilation system.</strong></p>
+<p>The programs that perform the four phases (<em>preprocessor</em>, <em>compiler</em>, <em>assembler</em>, and <em>linker</em>) are known collectively as the <em>compilation system</em>. </p>
+<hr>
+<h1 id="1-3-It-pays-to-Understand-How-Compilation-Systems-Work"><a href="#1-3-It-pays-to-Understand-How-Compilation-Systems-Work" class="headerlink" title="1.3 It pays to Understand How Compilation Systems Work"></a>1.3 It pays to Understand How Compilation Systems Work</h1><ul>
+<li>Optimizing program performance.</li>
+<li>Understanding link-time errors.</li>
+<li>Avoiding security holes.</li>
+</ul>
+<hr>
+<h1 id="1-4-Processors-Read-and-Interpret-Instructions-Stored-in-Memory"><a href="#1-4-Processors-Read-and-Interpret-Instructions-Stored-in-Memory" class="headerlink" title="1.4 Processors Read and Interpret Instructions Stored in Memory."></a>1.4 Processors Read and Interpret Instructions Stored in Memory.</h1><h2 id="1-4-1-Hardware-Organization-of-a-System"><a href="#1-4-1-Hardware-Organization-of-a-System" class="headerlink" title="1.4.1 Hardware Organization of a System"></a>1.4.1 Hardware Organization of a System</h2><p><img src="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.4-e1500402753177.png" alt="CSAPP-Figure-1.4"></p>
+<p><strong>Figure 1.4: Hardware organization of a typical system.</strong><br>CPU: central processing unit, ALU: arithmetic/logic unit, PC: program counter, USB: Universal Serial Bus.</p>
+<h3 id="Buses"><a href="#Buses" class="headerlink" title="Buses"></a>Buses</h3><p>Running throughout the system is a collection of electrical conduits called <em>buses</em> that carry bytes of information back and forth between the components.</p>
+<h3 id="I-O-Devices"><a href="#I-O-Devices" class="headerlink" title="I/O Devices"></a>I/O Devices</h3><p>Input/output (I/O) devices are the system’s connection to the external world.<br>Each I/O device is connected to the I/O bus by either a <em>controller</em> or <em>adapter</em>.</p>
+<h3 id="Main-Memory"><a href="#Main-Memory" class="headerlink" title="Main Memory"></a>Main Memory</h3><p>The <em>main memory</em> is a temporary storage device that both a program and the data it manipulates while the processor is executing the program.<br>Physically, main memory consists of a collection of <em>dynamic random access memory</em> (DRAM) chips.</p>
+<h3 id="Processor"><a href="#Processor" class="headerlink" title="Processor"></a>Processor</h3><p>The <em>central processing unit</em> (CPU), or simply <em>processor</em>, is the engine that interprets (or <em>executes</em>) instructions stored in main memory.<br>We can distinguish the processor’s <em>instruction set architecture</em>, describing the effect of each machine-code instruction, from its <em>microarchitecture</em>, describing how the processor is actually implemented.</p>
+<hr>
+<h1 id="1-5-Caches-Matter"><a href="#1-5-Caches-Matter" class="headerlink" title="1.5 Caches Matter"></a>1.5 Caches Matter</h1><p>From a programmer’s perspective, much of this copying is overhead that slows down the “real work” of the program.<br>To deal with the <em>processor-memory gap</em>, system designers include smaller, faster storage devices called <em>cache memories</em> (or simply caches) that serve as temporary staging areas for information that the processor is likely to need in the near future.<br>The idea behind caching is that a system can get the effect of both a very memory and a very fast one by exploiting <em>locality</em>, the tendency for programs to access data and code in localized regions.</p>
+<hr>
+<h1 id="1-6-Storage-Devices-Form-a-Hierarchy"><a href="#1-6-Storage-Devices-Form-a-Hierarchy" class="headerlink" title="1.6 Storage Devices Form a Hierarchy"></a>1.6 Storage Devices Form a Hierarchy</h1><p><img src="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.9-e1500402631427.png" alt="CSAPP-Figure-1.9"></p>
+<p><strong>Figure 1.9: An example of a memory hierarchy.</strong></p>
+<p>The main idea of a memory hierarchy is that storage at one level serves as a cache for storage at the next lower level.</p>
+<hr>
+<h1 id="1-7-The-Operating-System-Manages-the-Hardware"><a href="#1-7-The-Operating-System-Manages-the-Hardware" class="headerlink" title="1.7 The Operating System Manages the Hardware"></a>1.7 The Operating System Manages the Hardware</h1><p><img src="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.11-e1500402815852.png" alt="CSAPP-Figure-1.11"></p>
+<p><strong>Figure 1.11: Abstractions provided by an operating system.</strong></p>
+<h2 id="1-7-1-Processes"><a href="#1-7-1-Processes" class="headerlink" title="1.7.1 Processes"></a>1.7.1 Processes</h2><p>A <em>process</em> is the operating system’s abstraction for a running program.<br>Multiple processes can run concurrently on the same system, and each process appears to have <strong>exclusive use of the hardware</strong>. By <em>concurrently</em>, we mean that the instructions of one process are interleaved with the instructions of another process.<br>The operating system performs this interleaving with a mechanism known as <em>context switching</em>.<br>The operating system keeps track of all the state information that the process needs in order to run. This state, which is known as the <em>context</em>, includes information such as the current values of the PC, the register file, and the contents of main memory.<br>The transition from one process to another is managed by the operating system <em>kernel</em>.<br>When an application program requires some action by the operating system, such as to read or write a file, it executes a special <em>system call</em> instruction, transferring control to the kernel. The kernel them performs the requested operation and return back to the application program.<br>Note that <strong>the kernel is not a separate process</strong>. Instead, it is a collection of code and data structures that the system uses to manage all the processes.</p>
+<h2 id="1-7-2-Threads"><a href="#1-7-2-Threads" class="headerlink" title="1.7.2 Threads"></a>1.7.2 Threads</h2><p>Although we normally think of a process as having a single control flow, in modern systems a process can actually consists of multiple execution units, called <em>threads</em>, each running in the context of the process and sharing the same code and global data.</p>
+<h2 id="1-7-3-Virtual-Memory"><a href="#1-7-3-Virtual-Memory" class="headerlink" title="1.7.3 Virtual Memory"></a>1.7.3 Virtual Memory</h2><p><em>Virtual Memory</em> is an abstraction that provides each process with the illusion that it has exclusive use of the main memory.</p>
+<p><img src="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.13-e1500402864433.png" alt="CSAPP-Figure-1.13"></p>
+<p><strong>Figure 1.13: Process virtual address space.</strong></p>
+<p>For virtual memory to work, the basic idea is to store the contents of a process’s virtual memory on disk and then use the main memory as a cache for the disk.</p>
+<h2 id="1-7-4-Files"><a href="#1-7-4-Files" class="headerlink" title="1.7.4 Files"></a>1.7.4 Files</h2><p>A <em>file</em> is a sequence of bytes, nothing more and nothing less.<br>Every I/O device, including disks, keyboards, displays, and even networks, is modeled as a file.<br>All input and output in the system is performed by reading and writing files, using a small set of system calls known as <em>Unix I/O</em>.<br>It provides applications with a uniform view of all the varied I/O devices.</p>
+<hr>
+<h1 id="1-8-System-Communicate-with-Other-Systems-Using-Network"><a href="#1-8-System-Communicate-with-Other-Systems-Using-Network" class="headerlink" title="1.8 System Communicate with Other Systems Using Network"></a>1.8 System Communicate with Other Systems Using Network</h1><p>From the point view of an individual system, the network can be viewed as just another I/O device.<br>When the system copies a sequence of bytes from main memory to the network adapter, the data flow across the network to another machine.</p>
+<hr>
+<h1 id="1-9-Important-Themes"><a href="#1-9-Important-Themes" class="headerlink" title="1.9 Important Themes"></a>1.9 Important Themes</h1><h2 id="1-9-1-Amdahl’s-Law"><a href="#1-9-1-Amdahl’s-Law" class="headerlink" title="1.9.1 Amdahl’s Law"></a>1.9.1 Amdahl’s Law</h2><p>Consider a system in which executing some application requires time Told. Suppose some part of the system requires a fraction α of this time, and that we improve its performance by a factor of k.<br>The overall execution time would thus be Tnew=(1−α)Told+(αTold)/k<br>Even though we made a substantial improvement to a major part of the system, our net speedup was significantly less than the speedup for the one part.<br>This is the major insight of Amdahl’s law——to significantly speed up the entire system, we must improve the speed up of a very large fraction of the overall system.</p>
+<h2 id="1-9-2-Concurrency-and-Parallelism"><a href="#1-9-2-Concurrency-and-Parallelism" class="headerlink" title="1.9.2 Concurrency and Parallelism"></a>1.9.2 Concurrency and Parallelism</h2><p>We use the term <em>concurrency</em> to refer to the general concept of a system with multiple, simultaneous activities, and the term <em>parallelism</em> to refer to the use of concurrency to make a system run faster.<br>Parallelism can be exploited at multiple levels of abstraction in a computer system. We highlight three levels here, working from the highest to the lowest level in the system hierarchy.</p>
+<h3 id="Thread-Level-Concurrency"><a href="#Thread-Level-Concurrency" class="headerlink" title="Thread-Level Concurrency"></a>Thread-Level Concurrency</h3><p>Building on the process abstraction, we are able devise systems where multiple programs execute at the same time, leading to <em>concurrency</em>. With threads, we can even have multiple control flows executing within a single process.<br>Traditionally, this concurrent execution was only <em>simulated</em>, by having a single computer rapidly switch among its executing processes.<br>Compared to <em>uniprocessor system</em>, when we construct a system consiting of multiple processors all under the control of a single operating system kernel, we have a <em>multiprocessor system</em>.<br>Multi-core processors have several CPUs, each with its own L1 and L2 caches, and with each L1 cache split into two parts——one to hold recently fetched instructions and one to hold data. The cores share higher levels of caches as well as the interface to main memory.<br>Hyperthreading, sometimes called <em>simultaneous multi-threading</em>, is a technique that allows a single CPU to execute multiple flows of control. It involves having multiple copies of some of the CPU hardware, such as program counters and register files, while having only single copies of other parts of the hardware.<br>Whereas a conventional processor requires around 20,000 clock cycles to shift between different threads, a hyperthreaded processor decides which of its threads to execute on a cycle-by-cycle basis.<br>The use of multiprocessing can reduces the need to simulate concurrency when performing multiple tasks and can run a single application program faster (but only if that program is expressed in terms of multiple threads that can effectively execute in parallel).</p>
+<h3 id="Instruction-Level-Parallelism"><a href="#Instruction-Level-Parallelism" class="headerlink" title="Instruction-Level Parallelism"></a>Instruction-Level Parallelism</h3><p>At a much lower level of abstraction, modern processor can execute multiple instructions at one time.<br>With <em>pipelining</em>, the actions required to execute an instruction are partitioned into different steps and the processor hardware is organized as a series of stages, each performing one of these steps. The stages can operate in parallel, working on different parts of different instructions.<br>Processors that can sustain execution rates faster than 1 instruction per cycle are known as <em>superscalar</em> processors.</p>
+<h3 id="Single-Instruction-Multiple-Data-SIMD-Parallelism"><a href="#Single-Instruction-Multiple-Data-SIMD-Parallelism" class="headerlink" title="Single-Instruction, Multiple-Data (SIMD) Parallelism"></a>Single-Instruction, Multiple-Data (SIMD) Parallelism</h3><p>At the lowest level, many modern processors have special hardware that allows a single instruction to cause multiple operations to be performed in parallel.</p>
+<h2 id="1-9-3-The-Importance-of-Abstractions-in-Computer-Systems"><a href="#1-9-3-The-Importance-of-Abstractions-in-Computer-Systems" class="headerlink" title="1.9.3 The Importance of Abstractions in Computer Systems"></a>1.9.3 The Importance of Abstractions in Computer Systems</h2><p><img src="https://cdn.goushi.me/wp-content/uploads/2017/07/CSAPP-Figure-1.18-e1500403099100.png" alt="CSAPP-Figure-1.18"></p>
+<p><strong>Figure 1.18: Some abstractions provided by a computer system.</strong> A major theme in computer systems is to provide abstract representation at different levels to hide the complexity of the actual implementations.</p>
+<p>On the processor side, the <em>instruction set architecture</em> provides an abstraction of the actual processor hardware. </p>
+<p>With this abstraction, a machine behaves as if it were executed on a processor that perform just one instruction at a time. The underlying hardware is far more elaborate, executing multiple instructions in parallel, but always in a way that is consistent with the simple, sequential model. </p>
+<p>By keeping the same execution model, different implementations can execute the same machine code while offering a range of cost and performance. </p>
+<p>On the operating system side, we have introduced three abstractions: <em>files</em>, <em>virtual memory</em>, and <em>processes</em>. </p>
+<p>To these abstractions, we add a new one: the <em>virtual machine</em>, providing an abstraction of the entire computer, including the operating system, the processor, and the programs. </p>
+<hr>
+<h1 id="1-10-Summary"><a href="#1-10-Summary" class="headerlink" title="1.10 Summary"></a>1.10 Summary</h1><p>A <em>computer system</em> consists of hardware and system software that cooperate to run application programs.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CMU-15-213/" rel="tag"># CMU 15-213</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/01/阿罗不可能定理/" rel="next" title="阿罗不可能定理">
+                <i class="fa fa-chevron-left"></i> 阿罗不可能定理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/YingHuoooo.jpg" alt="YingHuoooo">
+            
+              <p class="site-author-name" itemprop="name">YingHuoooo</p>
+              <div class="site-description motion-element" itemprop="description">记录生活 分享知识</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-1-Information-Is-Bits-Context"><span class="nav-number">1.</span> <span class="nav-text">1.1 Information Is Bits + Context</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-2-Programs-Are-Translated-by-Other-Programs-into-Different-Forms"><span class="nav-number">2.</span> <span class="nav-text">1.2 Programs Are Translated by Other Programs into Different Forms</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-3-It-pays-to-Understand-How-Compilation-Systems-Work"><span class="nav-number">3.</span> <span class="nav-text">1.3 It pays to Understand How Compilation Systems Work</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-4-Processors-Read-and-Interpret-Instructions-Stored-in-Memory"><span class="nav-number">4.</span> <span class="nav-text">1.4 Processors Read and Interpret Instructions Stored in Memory.</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-1-Hardware-Organization-of-a-System"><span class="nav-number">4.1.</span> <span class="nav-text">1.4.1 Hardware Organization of a System</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Buses"><span class="nav-number">4.1.1.</span> <span class="nav-text">Buses</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-O-Devices"><span class="nav-number">4.1.2.</span> <span class="nav-text">I/O Devices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Main-Memory"><span class="nav-number">4.1.3.</span> <span class="nav-text">Main Memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Processor"><span class="nav-number">4.1.4.</span> <span class="nav-text">Processor</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-5-Caches-Matter"><span class="nav-number">5.</span> <span class="nav-text">1.5 Caches Matter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-6-Storage-Devices-Form-a-Hierarchy"><span class="nav-number">6.</span> <span class="nav-text">1.6 Storage Devices Form a Hierarchy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-7-The-Operating-System-Manages-the-Hardware"><span class="nav-number">7.</span> <span class="nav-text">1.7 The Operating System Manages the Hardware</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-1-Processes"><span class="nav-number">7.1.</span> <span class="nav-text">1.7.1 Processes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-2-Threads"><span class="nav-number">7.2.</span> <span class="nav-text">1.7.2 Threads</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-3-Virtual-Memory"><span class="nav-number">7.3.</span> <span class="nav-text">1.7.3 Virtual Memory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-4-Files"><span class="nav-number">7.4.</span> <span class="nav-text">1.7.4 Files</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-8-System-Communicate-with-Other-Systems-Using-Network"><span class="nav-number">8.</span> <span class="nav-text">1.8 System Communicate with Other Systems Using Network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-9-Important-Themes"><span class="nav-number">9.</span> <span class="nav-text">1.9 Important Themes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-9-1-Amdahl’s-Law"><span class="nav-number">9.1.</span> <span class="nav-text">1.9.1 Amdahl’s Law</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-9-2-Concurrency-and-Parallelism"><span class="nav-number">9.2.</span> <span class="nav-text">1.9.2 Concurrency and Parallelism</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Thread-Level-Concurrency"><span class="nav-number">9.2.1.</span> <span class="nav-text">Thread-Level Concurrency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instruction-Level-Parallelism"><span class="nav-number">9.2.2.</span> <span class="nav-text">Instruction-Level Parallelism</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Single-Instruction-Multiple-Data-SIMD-Parallelism"><span class="nav-number">9.2.3.</span> <span class="nav-text">Single-Instruction, Multiple-Data (SIMD) Parallelism</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-9-3-The-Importance-of-Abstractions-in-Computer-Systems"><span class="nav-number">9.3.</span> <span class="nav-text">1.9.3 The Importance of Abstractions in Computer Systems</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-10-Summary"><span class="nav-number">10.</span> <span class="nav-text">1.10 Summary</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YingHuoooo</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
